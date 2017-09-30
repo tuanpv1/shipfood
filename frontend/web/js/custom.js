@@ -111,4 +111,10 @@ var customScripts = {
 $('document').ready(function () {
     customScripts.init(); 
 	$('.carousel').carousel();
+    $('.bxslider').bxSlider({
+        minSlides: 4,
+        maxSlides: 6,
+        slideWidth: 400,
+        slideMargin: 5
+    });
 });

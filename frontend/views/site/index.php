@@ -7,147 +7,243 @@ use common\models\Banner;
 use common\models\News;
 use yii\helpers\Url;
 
-$this->title = 'Công ty Monalisa Spa';
+$this->title = 'Công ty Shipfood';
 ?>
-<!-- Begin #carousel-section -->
-<section id="carousel-section" class="section-global-wrapper">
-    <div class="container-fluid-kamn">
+<section id="home">
+    <div class="banner-container">
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item"><img src="images/banner-bg3.jpg" alt="banner"/></div>
+                <div class="item"><img src="images/banner-bg3.jpg" alt="banner"/></div>
+                <div class="item"><img src="images/banner-bg3.jpg" alt="banner"/></div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+        </div>
+
+    </div>
+
+    <div class="container hero-text2">
+        <h3>Danh sách đồ ăn cung cấp trong ngày</h3>
+    </div>
+</section>
+<section id="services" class="page-section colord">
+    <div class="container">
+        <ul class="bxslider">
+            <li>
+                <img src="images/work/1.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+            <li>
+                <img src="images/work/2.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+            <li>
+                <img src="images/work/3.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+            <li>
+                <img src="images/work/4.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+            <li>
+                <img src="images/work/5.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+            <li>
+                <img src="images/work/6.jpg"/>
+                <figcaption class="text-center">
+                    <h4>Cơm đùi gà chiên</h4>
+                    <a href="#">49,000 VND</a>
+                </figcaption>
+            </li>
+        </ul>
+    </div>
+    <!--/.container-->
+</section>
+<section id="aboutUs">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>SHIPFOOD</h2>
+            <p>Chúng tôi luôn đồng hành cùng bạn khi cần chỉ cần thao tác qua app hoặc gọi điện trực tiếp để đặt
+                hàng.</p>
+        </div>
+        <div class="row feature design">
+            <div class="area1 columns right">
+                <h3>Chất lượng, An toàn, Vệ sinh</h3>
+                <p>Định nghĩa mới cho bữa ăn trưa của bạn, sàn phẩm cơm fastfood mang tới cho bạn bữa ăn chất lượng, đảm
+                    bảo vệ sinh an toàn thực phẩm, giá cả phù hợp, phục vụ nhanh chóng, chuẩn xác. Tất cả đồ nhựa dùng
+                    đựng thực phẩm là nhựa pp, chịu được nhiệt độ -20 độ tới 120 độ. Đảm bảo sức khỏe cho người tiêu
+                    dùng. </p>
+<!--                <a href="#" class="btn">Request Quote</a>-->
+            </div>
+            <div class="area2 columns feature-media left"><img src="images/feature-img-1.jpg" alt="" width="100%"></div>
+        </div>
+    </div>
+</section>
+<section id="work" class="page-section page">
+    <div class="container text-center">
         <div class="row">
-            <div id="carousel-1" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators visible-lg">
-                    <?php if ($listBanner) {
-                        $i = 0;
-                        foreach ($listBanner as $item) { ?>
-                            <li data-target="#carousel-1" data-slide-to="<?= $i ?>"
-                                class="<?= $i == 0 ? 'active' : '' ?>"></li>
-                            <?php
-                            $i++;
-                        }
-                    } ?>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <?php if ($listBanner) {
-                        $i = 0;
-                        foreach ($listBanner as $item) {
-                            /** @var Banner $item */ ?>
-                            <!-- Begin Slide -->
-                            <div class="text-center item <?= $i == 0 ? 'active' : '' ?>">
-                                <img src="<?= $item->getImageLink() ?>" height="400" alt="<?= $item->name ?>">
-                                <div class="carousel-caption">
-                                    <h3 class="carousel-title hidden-xs"><?= $item->name ?></h3>
-                                    <p class="carousel-body"><?= $item->des ?></p>
-                                </div>
-                            </div>
-                            <!-- End Slide -->
-                            <?php
-                            $i++;
-                        }
-                    } ?>
+            <div class="col-md-12">
+                <div id="portfolio">
+                    <ul class="filters list-inline">
+                        <li><a class="active" data-filter="*" href="#">Danh sách thực đơn</a></li>
+                        <li><a data-filter=".photography" href="#">Thực đơn bữa sáng</a></li>
+                        <li><a data-filter=".branding" href="#">Thực đơn bữa trưa</a></li>
+                        <li><a data-filter=".web" href="#">Đồ uống đi kèm</a></li>
+                    </ul>
+                    <ul class="items list-unstyled clearfix animated fadeInRight showing" data-animation="fadeInRight"
+                        style="position: relative; height: 438px;">
+                        <li class="item branding" style="position: absolute; left: 0px; top: 0px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/1.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm đùi gà chiên</h2>
+                                    <a href="images/work/1.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item photography" style="position: absolute; left: 292px; top: 0px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/2.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/2.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item branding" style="position: absolute; left: 585px; top: 0px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/3.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/3.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item photography" style="position: absolute; left: 877px; top: 0px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/4.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/4.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item photography" style="position: absolute; left: 0px; top: 219px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/5.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/5.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item web" style="position: absolute; left: 292px; top: 219px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/6.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/6.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item photography" style="position: absolute; left: 585px; top: 219px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/7.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/7.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="item web" style="position: absolute; left: 877px; top: 219px;">
+                            <figure class="effect-bubba">
+                                <img src="images/work/8.jpg" alt="img02"/>
+                                <figcaption>
+                                    <h2>Cơm sườn xào</h2>
+                                    <a href="images/work/8.jpg" class="fancybox">Xem chi tiết</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-1" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-1" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
             </div>
         </div>
     </div>
 </section>
-<!-- End #carousel-section -->
-
-<?php if ($gioithieu) {
-    /** @var News $gioithieu */ ?>
-    <!-- Begin #services-section -->
-    <section class="services-section section-global-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="services-header">
-                    <h1 class="services-header-title"><a title="<?= $gioithieu->title ?>" href="<?= Url::to(['site/detail-news','id'=>$gioithieu->id]) ?>"><?= $gioithieu->title ?></a></h1>
-                </div>
-            </div>
-
-            <!-- Begin Services Row 1 -->
-            <div class="row services-row services-row-head services-row-1">
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <a href="<?= Url::to(['site/detail-news','id'=>$gioithieu->id]) ?>" title="<?= $gioithieu->title ?>">
-                    <img width="300px" src="<?= News::getFirstImageLinkTP($gioithieu->images) ?>"
-                         alt="<?= $gioithieu->title ?>" title="<?= $gioithieu->title ?>">
-                    </a>
-                </div>
-
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <p class="text-left">
-                        <?= $gioithieu->short_description ?>
-                    </p>
-                </div>
-            </div>
-            <!-- End Serivces Row 1 -->
-        </div>
-    </section>
-    <!-- End #services-section -->
-<?php } ?>
-
-<!--partner block-->
-<div class="container">
-    <ul class="bxslider3 text-center">
-        <?php if ($listDv) {
-            foreach ($listDv as $item) {
-                /** @var News $item */
-                ?>
-                <li>
-                    <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                        <img style="height: 150px" src="<?= News::getFirstImageLinkTP($item->images) ?>"
-                             alt="<?= $item->title ?>" >
-                        <div style="padding-top: 10px" class="text-center"><?=  $item->title ?></div>
-                    </a>
-                </li>
-                <?php
-            }
-        } ?>
-    </ul>
-</div>
-<!--end partner-->
-
-<!--Cong nghe-->
-<section id="services" class="services-section section-global-wrapper">
+<section id="app-download" class="page-section">
     <div class="container">
-        <div class="row">
-            <div class="services-header">
-                <h2 class="services-header-title">CÔNG NGHỆ ĐI ĐẦU TRONG LĨNH VỰC LÀM ĐẸP</h2>
-            </div>
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>Tải ứng dụng</h2>
+            <p>Ứng dụng hiện đang được hỗ trợ trên hai nên tảng Android và ISO</p>
         </div>
+        <!-- Team Member's Details -->
+        <div class="team-content">
+            <div class="row">
 
-        <!-- Begin Services Row 1 -->
-        <div class="row services-row services-row-head services-row-1">
-            <?php if ($listCn) {
-                foreach ($listCn as $item) {
-                    /** @var  News $item */
-                    ?>
-                    <div class="col-sm-4 col-md-3">
-                        <div class="thumbnail">
-                            <a href="<?= Url::to(['site/detail-news','id'=>$item->id]) ?>">
-                            <img style="height: 200px" src="<?= News::getFirstImageLinkTP($item->images) ?>" alt="<?= $item->title ?>" >
-                            </a>
-                            <div class="caption">
-                                <h4><a href="<?= Url::to(['site/detail-news','id'=>$item->id]) ?>"><?= $item->title ?></a></h4>
-                                <p><?= CUtils::subString($item->short_description,130) ?></p>
-                            </div>
+                <div class="col-md-offset-3 col-md-3 col-sm-6 col-xs-12">
+                    <!-- Team Member -->
+                    <div class="team-member pDark">
+                        <!-- Image Hover Block -->
+                        <div class="member-img">
+                            <!-- Image  -->
+                            <img style="height: 50px" class="img-responsive" src="images/androidapp.png" alt="">
+                            <img class="img-responsive" src="images/android.png" alt="">
+                        </div>
+                        <!-- Member Details -->
+                        <h4>Android</h4>
+                        <!-- Designation -->
+                        <div class="team-socials"><a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                                        class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
-                    <?php
-                }
-            } ?>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <!-- Team Member -->
+                    <div class="team-member pDark">
+                        <!-- Image Hover Block -->
+                        <div class="member-img">
+                            <!-- Image  -->
+                            <img style="height: 50px" class="img-responsive" src="images/appstore.png" alt="">
+                            <img class="img-responsive" src="images/android.png" alt=""></div>
+                        <!-- Member Details -->
+                        <h4>ISO</h4>
+                        <!-- Designation -->
+                        <!--                        <span class="pos">Manager</span>-->
+                        <div class="team-socials"><a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                                        class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- End Serivces Row 1 -->
     </div>
+    <!--/.container-->
 </section>
-<!--End cong nghe-->
-
-<?= \frontend\widgets\Customers::widget() ?>
