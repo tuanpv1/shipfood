@@ -38,7 +38,7 @@ AppAsset::register($this);
         <?php
 
         NavBar::begin([
-            'brandLabel' => '<img width="70px" src="' . Url::to("@web/img/logo_monalisa.png") . '" alt="logo" class="logo-default"/>',
+            'brandLabel' => '<img width="40px" src="' . Url::to("@web/img/logo.png") . '" alt="logo" class="logo-default"/>',
             'brandUrl' => Yii::$app->homeUrl,
             'brandOptions' => [
                 'class' => 'page-logo'
@@ -127,28 +127,28 @@ AppAsset::register($this);
             'items' => [
                 [
                     'encode' => false,
-                    'label' => News::getTypeName(News::TYPE_NEWS),
-                    'url' => ['news/index', 'type' => News::TYPE_NEWS],
+                    'label' => News::getTypeName(News::TYPE_FOOD_MORNING),
+                    'url' => ['news/index', 'type' => News::TYPE_FOOD_MORNING],
                 ],
                 [
                     'encode' => false,
-                    'label' => News::getTypeName(News::TYPE_CN),
-                    'url' => ['news/index', 'type' => News::TYPE_CN],
+                    'label' => News::getTypeName(News::TYPE_FOOD_LUNCH),
+                    'url' => ['news/index', 'type' => News::TYPE_FOOD_LUNCH],
                 ],
                 [
                     'encode' => false,
-                    'label' => News::getTypeName(News::TYPE_DV),
-                    'url' => ['news/index', 'type' => News::TYPE_DV],
+                    'label' => News::getTypeName(News::TYPE_DRINK),
+                    'url' => ['news/index', 'type' => News::TYPE_DRINK],
+                ],
+                [
+                    'encode' => false,
+                    'label' => News::getTypeName(News::TYPE_VEGETABLES),
+                    'url' => ['news/index', 'type' => News::TYPE_VEGETABLES],
                 ],
                 [
                     'encode' => false,
                     'label' => News::getTypeName(News::TYPE_ABOUT),
                     'url' => ['news/index', 'type' => News::TYPE_ABOUT],
-                ],
-                [
-                    'encode' => false,
-                    'label' => News::getTypeName(News::TYPE_KH),
-                    'url' => ['news/index', 'type' => News::TYPE_KH],
                 ],
             ]
         ],

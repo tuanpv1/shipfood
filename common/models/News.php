@@ -60,12 +60,11 @@ class News extends \yii\db\ActiveRecord
 
     const LIST_EXTENSION = '.jpg,.png';
 
-    const TYPE_NEWS = 1;
-    const TYPE_ABOUT = 2;
-    const TYPE_CN = 3;
-    const TYPE_DV = 4;
-    const TYPE_KH = 5;
-
+    const TYPE_FOOD_MORNING = 1;
+    const TYPE_FOOD_LUNCH = 2;
+    const TYPE_DRINK = 3;
+    const TYPE_VEGETABLES = 4;
+    const TYPE_ABOUT = 5;
 
     const IMAGE_TYPE_THUMBNAIL = 1; //anh dai dien
     const IMAGE_TYPE_DES = 2; //anh mo ta
@@ -147,7 +146,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Tiêu đề'),
+            'title' => Yii::t('app', 'Tên'),
             'title_ascii' => Yii::t('app', 'Title Ascii'),
             'content' => Yii::t('app', 'Nội dung'),
             'thumbnail' => Yii::t('app', 'Ảnh đại diện'),
@@ -239,11 +238,11 @@ class News extends \yii\db\ActiveRecord
     public static function listStatusType()
     {
         $lst = [
-            self::TYPE_NEWS => 'Tin làm đẹp',
+            self::TYPE_FOOD_MORNING => 'Đồ ăn sáng',
+            self::TYPE_FOOD_LUNCH => 'Đồ ăn trưa',
+            self::TYPE_DRINK => 'Thức uống',
+            self::TYPE_VEGETABLES => 'Thực phẩm',
             self::TYPE_ABOUT => 'Giới thiệu',
-            self::TYPE_CN => 'Công nghệ',
-            self::TYPE_DV => 'Dịch vụ',
-            self::TYPE_KH => 'Phản hồi của khách hàng',
         ];
         return $lst;
     }

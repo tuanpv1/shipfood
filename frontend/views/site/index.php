@@ -41,6 +41,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/1.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <a href="#" class="btn">Đặt hàng</a>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -48,6 +49,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/2.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <button href="#" class="btn">Đặt hàng</button>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -55,6 +57,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/3.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <button href="#" class="btn">Đặt hàng</button>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -62,6 +65,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/4.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <button href="#" class="btn">Đặt hàng</button>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -69,6 +73,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/5.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <button href="#" class="btn">Đặt hàng</button>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -76,6 +81,7 @@ $this->title = 'Công ty Shipfood';
                 <img src="images/work/6.jpg"/>
                 <figcaption class="text-center">
                     <h4>Cơm đùi gà chiên</h4>
+                    <button href="#" class="btn btn-danger">Đặt hàng</button>
                     <a href="#">49,000 VND</a>
                 </figcaption>
             </li>
@@ -98,7 +104,7 @@ $this->title = 'Công ty Shipfood';
                     bảo vệ sinh an toàn thực phẩm, giá cả phù hợp, phục vụ nhanh chóng, chuẩn xác. Tất cả đồ nhựa dùng
                     đựng thực phẩm là nhựa pp, chịu được nhiệt độ -20 độ tới 120 độ. Đảm bảo sức khỏe cho người tiêu
                     dùng. </p>
-<!--                <a href="#" class="btn">Request Quote</a>-->
+                <a href="#" class="btn">Đặt hàng</a>
             </div>
             <div class="area2 columns feature-media left"><img src="images/feature-img-1.jpg" alt="" width="100%"></div>
         </div>

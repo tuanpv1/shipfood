@@ -30,7 +30,7 @@ $this->registerJs("Layout.init();");
 <?php $this->beginBody() ?>
 <div class="logo">
     <a href="index.html">
-        <img style="width: 200px " src="<?= Url::to("@web/img/logo_monalisa.png"); ?>" alt=""/>
+        <img style="width: 100px " src="<?= Url::to("@web/img/logo.png"); ?>" alt=""/>
     </a>
 </div>
 <div class="menu-toggler sidebar-toggler">

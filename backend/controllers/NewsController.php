@@ -47,7 +47,7 @@ class NewsController extends Controller
      * Lists all News models.
      * @return mixed
      */
-    public function actionIndex($type = News::TYPE_NEWS)
+    public function actionIndex($type = News::TYPE_ABOUT)
     {
         if ($type == News::TYPE_ABOUT) {
             $model = News::findOne(['status'=>News::STATUS_ACTIVE,'type'=>News::TYPE_ABOUT]);

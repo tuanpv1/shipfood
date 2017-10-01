@@ -126,3 +126,7 @@ div.required label.control-label:after {
 .file-preview-image{
     width: 300px;
 }
+
+.fileinput-remove,.fileinput-cancel,.kv-file-remove,.text-info,.kv-file-upload{
+    display: none !important;
+}

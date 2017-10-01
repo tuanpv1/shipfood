@@ -254,7 +254,7 @@ CREATE TABLE `news` (
   `title` varchar(512) NOT NULL,
   `title_ascii` varchar(512) DEFAULT NULL,
   `content` text COMMENT 'HTML content',
-  `thumbnail` varchar(512) DEFAULT NULL COMMENT 'anh de hien thi trong list',
+  `images` varchar(1000) DEFAULT NULL COMMENT 'anh de hien thi trong list',
   `type` smallint(6) NOT NULL DEFAULT '1' COMMENT '1 - html news\n2 - video (thumbnail c� n�t play)',
   `tags` varchar(200) DEFAULT NULL,
   `short_description` varchar(500) DEFAULT NULL,

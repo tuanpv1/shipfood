@@ -127,35 +127,32 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
         ],
 
     ]) ?>
-    <?php if ($type == News::TYPE_DV){ ?>
-    </p>Vui lòng upload hình ảnh có kích thước 460*300 px Để hiển thị tốt nhất <p>
-        <?php } ?>
-        <?php if ($type != News::TYPE_ABOUT && $type != News::TYPE_KH) { ?>
-            <?=
-            $form->field($model, 'image_des[]')->widget(\kartik\widgets\FileInput::classname(), [
-                'options' => [
-                    'multiple' => true,
-                    'accept' => 'image/*',
-                    'style' => 'width: 100%;'
+    <?php if ($type != News::TYPE_ABOUT) { ?>
+        <?=
+        $form->field($model, 'image_des[]')->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => [
+                'multiple' => true,
+                'accept' => 'image/*',
+                'style' => 'width: 100%;'
 
+            ],
+            'pluginOptions' => [
+                'uploadUrl' => \yii\helpers\Url::to(['/news/upload-file']),
+                'uploadExtraData' => [
+                    'type' => News::IMAGE_TYPE_DES,
+                    'image_des_old' => $model->image_des
                 ],
-                'pluginOptions' => [
-                    'uploadUrl' => \yii\helpers\Url::to(['/news/upload-file']),
-                    'uploadExtraData' => [
-                        'type' => News::IMAGE_TYPE_DES,
-                        'image_des_old' => $model->image_des
-                    ],
-                    'allowedFileExtensions' => ['jpg', 'gif', 'jpeg', 'png'],
-                    'showUpload' => false,
-                    'showRemove' => true,
-                    'maxFileSize' => News::MAX_SIZE_UPLOAD,
-                    'maxFileCount' => 10,
-                    'minFileCount' => 1,
-                    'initialPreview' => $imageDesPreview,
-                    'initialPreviewConfig' => $imageDesInit,
-                ],
-                'pluginEvents' => [
-                    "fileuploaded" => "function(event, data, previewId, index) {
+                'allowedFileExtensions' => ['jpg', 'gif', 'jpeg', 'png'],
+                'showUpload' => false,
+                'showRemove' => true,
+                'maxFileSize' => News::MAX_SIZE_UPLOAD,
+                'maxFileCount' => 10,
+                'minFileCount' => 1,
+                'initialPreview' => $imageDesPreview,
+                'initialPreviewConfig' => $imageDesInit,
+            ],
+            'pluginEvents' => [
+                "fileuploaded" => "function(event, data, previewId, index) {
                 var response=data.response;
                 console.log(response.success);
                 console.log(response);
@@ -180,8 +177,8 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
                     $('#images_tmp').val(JSON.stringify(old_value));
                  }
             }",
-                    "fileclear" => "function() {  console.log('delete'); }",
-                    "filedeleted" => "function(event, key) {
+                "fileclear" => "function() {  console.log('delete'); }",
+                "filedeleted" => "function(event, key) {
                     var image_deleted=key;
                     var old_value_text=$('#images_tmp').val();
                         var old_value=jQuery.parseJSON(old_value_text);
@@ -203,32 +200,15 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
                     }
                     $('#images_tmp').val(JSON.stringify(old_value));
                 }"
-                ],
+            ],
 
-            ]) ?>
-        <?php } ?>
+        ]) ?>
 
-        <?= $form->field($model, 'short_description')->textarea(['rows' => 4]) ?>
+        <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
-        <?php if ($type != News::TYPE_KH) { ?>
-            <?php echo $form->field($model, 'content')->widget(\common\widgets\CKEditor::className(), [
-//            'options' => [
-//                'rows' => 8,
-//            ],
-                'preset' => 'full',
-            ]);
-            $_SESSION['KCFINDER'] = array(
-                'disabled' => false
-            ); ?>
-        <?php } ?>
+    <?php } ?>
 
-        <?php if ($type == News::TYPE_DV) { ?>
-            <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
-
-            <?=
-            $form->field($model, 'honor')->textInput(['maxlength' => true])->hint('Thời gian được tính bằng phút')
-            ?>
-        <?php } ?>
+    <?= $form->field($model, 'short_description')->textarea(['rows' => 4]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Tạo mới') : Yii::t('app', 'Cập nhật'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

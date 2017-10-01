@@ -86,28 +86,28 @@ class SiteController extends Controller
     {
         $listBanner = Banner::findAll(['status' => Banner::STATUS_ACTIVE]);
 
-        $listCn = News::find()
-            ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_CN])
-            ->orderBy(['updated_at' => SORT_DESC])
-            ->limit(4)
-            ->all();
-
-        $gioithieu = News::find()->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_ABOUT])
-            ->orderBy(['updated_at' => SORT_DESC])->one();
-
-        $listDv = News::find()
-            ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_DV])
-            ->orderBy(['updated_at' => SORT_DESC])
-            ->limit(20)
-            ->all();
+//        $listCn = News::find()
+//            ->andWhere(['status' => News::STATUS_ACTIVE])
+//            ->andWhere(['type' => News::TY])
+//            ->orderBy(['updated_at' => SORT_DESC])
+//            ->limit(4)
+//            ->all();
+//
+//        $gioithieu = News::find()->andWhere(['status' => News::STATUS_ACTIVE])
+//            ->andWhere(['type' => News::TYPE_ABOUT])
+//            ->orderBy(['updated_at' => SORT_DESC])->one();
+//
+//        $listDv = News::find()
+//            ->andWhere(['status' => News::STATUS_ACTIVE])
+//            ->andWhere(['type' => News::TYPE_DV])
+//            ->orderBy(['updated_at' => SORT_DESC])
+//            ->limit(20)
+//            ->all();
 
         return $this->render('index', [
-            'listCn' => $listCn,
-            'gioithieu' => $gioithieu,
-            'listDv' => $listDv,
+//            'listCn' => $listCn,
+//            'gioithieu' => $gioithieu,
+//            'listDv' => $listDv,
             'listBanner' => $listBanner,
         ]);
     }
