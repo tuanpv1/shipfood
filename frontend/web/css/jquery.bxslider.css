@@ -103,20 +103,16 @@
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(../img/controls.png) no-repeat 0 -32px;
+	background: url(../img/pre.png) no-repeat;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(../img/controls.png) no-repeat -43px -32px;
+	background: url(../img/next.png) no-repeat;
 }
 
 .bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
-}
-
-.bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
 }
 
 .bx-wrapper .bx-controls-direction a {
