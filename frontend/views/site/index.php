@@ -211,7 +211,47 @@
 
                     <div class="main_portfolio_content">
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p1.png" alt=""/>
+                            <img style="height: 200px" src="images/vegetable1.jpg" alt=""/>
+                            <div class="portfolio_images_overlay text-center">
+                                <h6>Đậu bắp</h6>
+                                <p class="product_price">35.000 VND</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                            <img style="height: 200px" src="images/vegetable2.jpg" alt=""/>
+                            <div class="portfolio_images_overlay text-center">
+                                <h6>Đậu bắp</h6>
+                                <p class="product_price">35.000 VND</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                            <img style="height: 200px" src="images/vegetable3.jpg" alt=""/>
+                            <div class="portfolio_images_overlay text-center">
+                                <h6>Đậu bắp</h6>
+                                <p class="product_price">35.000 VND</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                            <img style="height: 200px" src="images/vegetable4.jpg" alt=""/>
+                            <div class="portfolio_images_overlay text-center">
+                                <h6>Đậu bắp</h6>
+                                <p class="product_price">35.000 VND</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                            <img style="height: 200px" src="images/vegetable2.jpg" alt=""/>
+                            <div class="portfolio_images_overlay text-center">
+                                <h6>Đậu bắp</h6>
+                                <p class="product_price">35.000 VND</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
+                            <img style="height: 200px" src="images/vegetable1.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
@@ -219,57 +259,17 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p2.png" alt=""/>
+                            <img style="height: 200px" src="images/vegetable4.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
+                                <h6>Đậu bắp</h6>
                                 <p class="product_price">35.000 VND</p>
 
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p3.png" alt=""/>
+                            <img style="height: 200px" src="images/vegetable3.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p4.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p5.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p6.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p7.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p8.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
+                                <h6>Đậu bắp</h6>
                                 <p class="product_price">35.000 VND</p>
 
                             </div>
