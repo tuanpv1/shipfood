@@ -95,7 +95,7 @@ a span {
 }
 
 p {
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 }
 
 .clear {
@@ -157,7 +157,7 @@ h5 {
     font-weight: 300;
     margin: 0;
     line-height: 2rem;
-    font-family: 'Pacifico', cursive;
+    font-family: 'roboto', sans-serif;
     color: #d12129;
 
 }
@@ -188,7 +188,7 @@ h4 {
     font-size: 1.875rem;
     line-height: 2.2rem;
     margin-bottom: 1.1rem;
-    font-family: 'Pacifico', cursive;
+    font-family: 'roboto', sans-serif;
 
 }
 
@@ -199,7 +199,7 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    margin-bottom: .9rem;
+    margin-bottom: .6rem;
 }
 
 p {
@@ -756,7 +756,7 @@ a.navbar-brand.our_logo {
 
 .main_slider .main_slider_content h1 {
     font-size: 6rem;
-    font-family: 'Pacifico', cursive;
+    font-family: 'roboto', sans-serif;
     color: #fff;
     line-height: 6rem;
     margin: 0px 0px 60px 0px;
@@ -900,6 +900,14 @@ a.navbar-brand.our_logo {
     line-height: 3rem;
 }
 
+.portfolio_images_overlay p.product_info {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
 /*Amazing Deliceas Section css */
 .ourPakeg .main_pakeg_content .head_title h3 {
     color: #fff;
@@ -908,7 +916,7 @@ a.navbar-brand.our_logo {
 
 .ourPakeg .main_pakeg_content .head_title h4 {
     color: #fff;
-    font-family: 'Pacifico', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 1.875rem;
 }
 
@@ -979,7 +987,7 @@ a.navbar-brand.our_logo {
 }
 
 /*.single_monail_apps_text {*/
-    /*margin-top: 120px;*/
+/*margin-top: 120px;*/
 /*}*/
 
 .single_monail_apps_text h4 {
@@ -1039,7 +1047,7 @@ a.navbar-brand.our_logo {
 .single_widget h3 {
     font-size: 1.875rem;
     color: #d12129;
-    font-family: 'Pacifico', cursive;
+    font-family: 'roboto', sans-serif;
 }
 
 .single_widget_info p {
@@ -1126,5 +1134,38 @@ a.navbar-brand.our_logo {
     margin-top: -7px;
     margin-left: -6px;
     text-decoration: none;
+}
 
+.modal-content {
+    border-radius: 0
+}
+
+.close, .close:hover {
+    color: #d12129;
+}
+.main_portfolio_content .ship-img{
+    height: 200px;
+}
+@media (max-width: 760px) {
+    .main_features_content {
+        padding: 0;
+    }
+    .portfolio_images_overlay h6{
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+    .portfolio_images_overlay p.product_price{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .portfolio_images_overlay p.product_info{
+        font-size: 0.5rem;
+    }
+    .main_portfolio_content .ship-img {
+        height: 150px;
+    }
+    .single_portfolio_text:hover .portfolio_images_overlay {
+        top: 17px;
+        left: 8px;
+    }
 }

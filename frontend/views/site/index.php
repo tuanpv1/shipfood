@@ -75,13 +75,13 @@
     </div>
 </section>
 
-<section id="lunchs" class="portfolio">
+<section id="food" class="portfolio">
     <div class="container">
         <div class="row">
             <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
                 <div class="col-md-12">
                     <div class="head_title text-center">
-                        <h4>Năng Lượng Cho Bữa Trưa</h4>
+                        <h4>Bữa ăn</h4>
                     </div>
 
                     <div class="main_portfolio_content">
@@ -90,7 +90,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -98,7 +104,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -106,7 +118,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -114,7 +132,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -122,7 +146,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -130,7 +160,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -138,7 +174,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
@@ -146,7 +188,13 @@
                             <div class="portfolio_images_overlay text-center">
                                 <h6>Bò Hầm</h6>
                                 <p class="product_price">35.000 VND</p>
-
+                                <p class="product_info">
+                                    Cơm <br>
+                                    Thịt bò xào<br>
+                                    Đậu bắp luộc <br>
+                                    Lạc Rang <br>
+                                    Cá viên <br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -156,29 +204,11 @@
     </div>
 </section>
 
-<section id="breakfast" class="ourPakeg">
+<section id="drinks" class="ourPakeg">
     <div class="container">
         <div class="main_pakeg_content">
             <div class="row">
-                <div class="single_pakeg_two text-left wow rotateInDownLeft">
-                    <div class="col-md-6 col-sm-8">
-                        <div class="single_pakeg_text">
-                            <div class="pakeg_title">
-                                <h4>Bữa sáng </h4>
-                            </div>
-
-                            <ul>
-                                <li> Thịt bò hầm nấm.................................................35.000 VND</li>
-                                <li> Thịt bò hầm nấm.................................................35.000 VND</li>
-                                <li> Thịt bò hầm nấm.................................................35.000 VND</li>
-                                <li> Thịt bò hầm nấm.................................................35.000 VND</li>
-                                <li> Thịt bò hầm nấm.................................................35.000 VND</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="drinks" class="single_pakeg_one text-right wow rotateInDownRight">
+                <div class="single_pakeg_one text-right wow rotateInDownRight">
                     <div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4">
                         <div class="single_pakeg_text">
                             <div class="pakeg_title">
@@ -206,72 +236,80 @@
             <div class="portfolio_content text-center  wow fadeIn" data-wow-duration="5s">
                 <div class="col-md-12">
                     <div class="head_title text-center">
-                        <h4>Thực Phẩm Sạch</h4>
+                        <h4>Từ nông trại đến bàn ăn</h4>
                     </div>
 
                     <div class="main_portfolio_content">
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable1.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable1.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable2.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable2.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable3.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable3.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable4.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable4.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable2.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable2.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable1.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable1.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Bò Hầm</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable4.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable4.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img style="height: 200px" src="images/vegetable3.jpg" alt=""/>
+                            <img class="ship-img" src="images/vegetable3.jpg" alt=""/>
                             <div class="portfolio_images_overlay text-center">
-                                <h6>Đậu bắp</h6>
-                                <p class="product_price">35.000 VND</p>
-
+                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <h6>Đậu bắp</h6>
+                                    <p class="product_price">35.000 VND</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -312,3 +350,40 @@
         </div>
     </div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="myModalLabel">Đậu bắp</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img style="height: 300px" src="images/vegetable1.jpg" alt=""/>
+                    </div>
+                    <div class="col-md-7">
+                        <b>Giá thành:</b> 35.000 VND.
+                        <br>
+                        Thương hiệu Đà Lạt G.A.P, Việt Nam.
+                        <br>
+                        Danh mục sản phẩm Rau sạch.
+                        <br>
+                        Đậu bắp còn có nhiều tên gọi khác như mướp tây, bông vàng, bắp chà hay okra (tiếng Anh). Đậu bắp
+                        Đà Lạt G.A.P được gieo trồng và thu hoạch theo chứng chỉ rau sạch quốc tế Global G.A.P.
+                        <br>
+                        Quy cách bán hàng: Vỉ khoảng 1 kilogram
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

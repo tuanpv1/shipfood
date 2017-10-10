@@ -60,10 +60,9 @@ use yii\helpers\Url;
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#slider">Trang chủ</a></li>
                                 <li><a href="#slider">Shipfood</a></li>
-                                <li><a href="#breakfast">Đồ ăn sáng</a></li>
-                                <li><a href="#lunchs">Đồ ăn trưa</a></li>
+                                <li><a href="#food">Bữa ăn</a></li>
                                 <li><a href="#drinks">Đồ uống</a></li>
-                                <li><a href="#vegetable">Thực phẩm sạch</a></li>
+                                <li><a href="#vegetable">Rau sạch</a></li>
                                 <li><a href="#mobaileapps">Tải app</a></li>
                                 <li><a href="#footer">Liên hệ</a></li>
                             </ul>
