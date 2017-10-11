@@ -273,20 +273,14 @@ class SiteController extends Controller
         }
     }
 
-    public function actionNews($type = News::TYPE_NEWS)
+    public function actionNews()
     {
         $cat = null;
         $listNews = News::find()
-            ->andWhere(['status' => News::STATUS_ACTIVE]);
-        if ($type == News::TYPE_NEWS) {
-            $listNews->andWhere(['type' => News::TYPE_NEWS]);
-        } elseif ($type == News::TYPE_DV) {
-            $listNews->andWhere(['type' => News::TYPE_DV]);
-        } elseif ($type == News::TYPE_CN) {
-            $listNews->andWhere(['type' => News::TYPE_CN]);
-        }
-
-        $listNews->orderBy(['created_at' => SORT_DESC]);
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['<>','type',News::TYPE_ABOUT]);
+//
+        $listNews->orderBy(['updated_at' => SORT_DESC]);
         $countQuery = clone $listNews;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
         $pageSize = 6;
@@ -297,8 +291,8 @@ class SiteController extends Controller
         return $this->render('index-news', [
             'listNews' => $models,
             'pages' => $pages,
-            'type' => $type,
-            'cat' => $cat,
+//            'type' => $type,
+//            'cat' => $cat,
         ]);
 
     }

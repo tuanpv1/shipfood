@@ -153,13 +153,19 @@ h3 {
 
 h4,
 h5 {
-
     font-weight: 300;
     margin: 0;
     line-height: 2rem;
     font-family: 'roboto', sans-serif;
     color: #d12129;
-
+}
+.list-food h6 {
+    /*font-weight: 400;*/
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    font-family: 'roboto', sans-serif;
+    color: black;
 }
 
 h1 {
@@ -739,14 +745,48 @@ a.navbar-brand.our_logo {
     color: #fff;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .main_menu_bg ul li a:hover {
     color: #da9b31;
+}
+
+.main_menu_bg li ul {
+    display: none;
+}
+
+.main_menu_bg ul li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.main_menu_bg li ul li a {
+    background: rgba(0, 0, 0, .45);
+}
+
+li:hover > ul {
+    display: block;
+    position: absolute;
+}
+
+.main-navigation li ul li {
+    border-top: 0;
 }
 
 /* slider section */
 
 .slider {
     background: url(../images/bannerbg.jpg) center center no-repeat;
+    /*position: fixed;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    /*margin: auto;*/
+    /*overflow: auto;*/
     background-size: cover;
 }
 
@@ -763,10 +803,19 @@ a.navbar-brand.our_logo {
 }
 
 .main_slider_content {
-    padding: 250px 0px 200px 0px;
+    padding: 260px 0px 210px 0px;
     width: 70%;
     margin: 0 auto;
     color: #fff;
+}
+
+@media (min-width: 1367px) {
+    .main_slider_content {
+        padding: 450px 0px 350px 0px;
+        width: 70%;
+        margin: 0 auto;
+        color: #fff;
+    }
 }
 
 .slider_overlay {
@@ -1143,29 +1192,48 @@ a.navbar-brand.our_logo {
 .close, .close:hover {
     color: #d12129;
 }
-.main_portfolio_content .ship-img{
+
+.main_portfolio_content .ship-img {
     height: 200px;
 }
+
 @media (max-width: 760px) {
     .main_features_content {
         padding: 0;
     }
-    .portfolio_images_overlay h6{
+
+    .portfolio_images_overlay h6 {
         font-size: 0.8rem;
         line-height: 1rem;
     }
-    .portfolio_images_overlay p.product_price{
+
+    .portfolio_images_overlay p.product_price {
         font-size: 1rem;
         line-height: 1.5rem;
     }
-    .portfolio_images_overlay p.product_info{
+
+    .portfolio_images_overlay p.product_info {
         font-size: 0.5rem;
     }
+
     .main_portfolio_content .ship-img {
         height: 150px;
     }
+
     .single_portfolio_text:hover .portfolio_images_overlay {
         top: 17px;
         left: 8px;
+    }
+
+    .main_slider .main_slider_content h1 {
+        font-size: 4rem;
+    }
+
+    .main_slider_content {
+        padding: 130px 0px 50px 0px;
+    }
+
+    .single_pakeg_one {
+        padding: 20px 0px 10px 0px;
     }
 }

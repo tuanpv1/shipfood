@@ -8,88 +8,160 @@
 use common\models\News;
 use yii\helpers\Url;
 
-$this->title = 'Tin tức làm đẹp';
+$this->title = 'Tin tức';
 ?>
-<div class="row container-kamn">
-    <img src="<?= Yii::$app->getUrlManager()->getBaseUrl();  ?>/img/slider/slide5.jpg"
-         class="blog-post"
-         alt="Monalisa spa không gian sang trọng"
-         title="Monalisa spa không gian sang trọng"
-         align="right"
-         width="100%">
-</div>
 <!-- Main Container -->
-<div id="banners"></div>
-<div class="container">
-    <h1 class="text-center">
-        <?= News::getTypeName($type) . ' Monalisa Spa' ?>
-    </h1>
-    <div class="row">
-        <div class="col-md-9">
-            <?php if ($listNews) {
-                foreach ($listNews as $item) {
-                    /** @var News $item */
-                    ?>
-                    <div class="blog-post">
-                        <h2>
-                            <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                                <i class="fa fa-file-text"></i>
-                                <?= $item->title ?>
-                            </a>
-                        </h2><br>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                                    <img src="<?= News::getFirstImageLinkTP($item->images) ?>" alt="<?= $item->title ?>"
-                                         title="<?= $item->title ?>"
-                                         align="right" width="100%" class="blog-image">
-                                </a>
+<section class="abouts">
+    <div class="container">
+        <div class="row">
+            <div class="abouts_content">
+                <h4 class="text-center">SHIPFOOD</h4>
+                <div class="row">
+                    <div class="col-md-9">
+                        <?php if ($listNews) {
+                            foreach ($listNews as $item) {
+                                /** @var News $item */
+                                ?>
+                                <div class="blog-post">
+                                    <h5>
+                                        <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
+                                            <i class="fa fa-file-text"></i>
+                                            <?= $item->title ?>
+                                        </a>
+                                    </h5><br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
+                                                <img src="<?= News::getFirstImageLinkTP($item->images) ?>"
+                                                     alt="<?= $item->title ?>"
+                                                     title="<?= $item->title ?>"
+                                                     align="right" width="100%" class="blog-image">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p><?= $item->short_description ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="row text-right">
+                                        <i class="glyphicon glyphicon-eye-open"></i> Lượt xem: <?= $item->view_count ?>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i class="glyphicon glyphicon-time"></i> Ngày
+                                        đăng: <?= date('d-m-Y', $item->created_at) ?>
+                                    </div>
+                                </div>
+                                <hr>
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <div class="blog-post">
+                                <a href="#"><h5><i class="fa fa-file-text"></i> Hoạt động ngày 10/11/2017</h5></a><br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <img src="images/p1.png" alt="Chất lượng, An toàn, Vệ sinh"
+                                                 title="Chất lượng, An toàn, Vệ sinh"
+                                                 align="right" height="200px" class="blog-image">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus
+                                            asperiores aut beatae corporis dicta dignissimos dolorem ea eos error facere
+                                            fuga illum incidunt ipsum itaque laboriosam laudantium libero molestias
+                                            natus necessitatibus nesciunt non nulla obcaecati officia, optio provident
+                                            quasi qui quis quisquam quod rem repudiandae rerum sed sunt tempora tempore
+                                            voluptas! Accusamus dicta mollitia obcaecati odit, quisquam sint
+                                            voluptate?</p>
+                                    </div>
+                                </div>
+                                <div class="row text-right">
+                                    <i class="glyphicon glyphicon-eye-open"></i> Lượt xem: 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-time"></i> Ngày
+                                    đăng: 01-10-2017
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <?php if($type == News::TYPE_DV){ ?>
-                                    <p>Giá: <?= $item->price ? News::formatNumber($item->price) : 0 ?> VND</p>
-                                    <p>Thời gian sử dụng dich
-                                        vụ: <?= $item->honor ? $item->honor . ' Phút' : 'Liên hệ để biết chi tiết' ?> </p>
-                                <?php } ?>
-                                <p><?= $item->short_description ?></p>
+                            <hr>
+                            <div class="blog-post">
+                                <a href="#"><h5><i class="fa fa-file-text"></i> Hoạt động ngày 10/11/2017</h5></a><br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <img src="images/p1.png" alt="Chất lượng, An toàn, Vệ sinh"
+                                                 title="Chất lượng, An toàn, Vệ sinh"
+                                                 align="right" height="200px" class="blog-image">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus
+                                            asperiores aut beatae corporis dicta dignissimos dolorem ea eos error facere
+                                            fuga illum incidunt ipsum itaque laboriosam laudantium libero molestias
+                                            natus necessitatibus nesciunt non nulla obcaecati officia, optio provident
+                                            quasi qui quis quisquam quod rem repudiandae rerum sed sunt tempora tempore
+                                            voluptas! Accusamus dicta mollitia obcaecati odit, quisquam sint
+                                            voluptate?</p>
+                                    </div>
+                                </div>
+                                <div class="row text-right">
+                                    <i class="glyphicon glyphicon-eye-open"></i> Lượt xem: 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-time"></i> Ngày
+                                    đăng: 01-10-2017
+                                </div>
                             </div>
+                            <hr>
+                            <div class="blog-post">
+                                <a href="#"><h5><i class="fa fa-file-text"></i> Hoạt động ngày 10/11/2017</h5></a><br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <img src="images/p1.png" alt="Chất lượng, An toàn, Vệ sinh"
+                                                 title="Chất lượng, An toàn, Vệ sinh"
+                                                 align="right" height="200px" class="blog-image">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus
+                                            asperiores aut beatae corporis dicta dignissimos dolorem ea eos error facere
+                                            fuga illum incidunt ipsum itaque laboriosam laudantium libero molestias
+                                            natus necessitatibus nesciunt non nulla obcaecati officia, optio provident
+                                            quasi qui quis quisquam quod rem repudiandae rerum sed sunt tempora tempore
+                                            voluptas! Accusamus dicta mollitia obcaecati odit, quisquam sint
+                                            voluptate?</p>
+                                    </div>
+                                </div>
+                                <div class="row text-right">
+                                    <i class="glyphicon glyphicon-eye-open"></i> Lượt xem: 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-time"></i> Ngày
+                                    đăng: 01-10-2017
+                                </div>
+                            </div>
+                            <hr>
+
+                            <?php
+                        } ?>
+
+                        <div id="last-comment">
                         </div>
-                        <div class="row text-right">
-                            <i class="glyphicon glyphicon-eye-open"></i> Lượt xem: <?= $item->view_count ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="glyphicon glyphicon-time"></i> Ngày
-                            đăng: <?= date('d-m-Y', $item->created_at) ?>
-                        </div>
+                        <input type="hidden" name="page" id="page"
+                               value="<?= sizeof($listNews) - 1 ?>">
+                        <input type="hidden" name="numberCount" id="numberCount" value="<?= sizeof($listNews) ?>">
+                        <input type="hidden" name="total" id="total" value="<?= $pages->totalCount ?>">
+                        <?php if (count($listNews) >= 6) { ?>
+                            <div style="margin-bottom: 20px" class="view-more-page tac text-center">
+                                <button class="btn btn-primary next page-numbers" id="more" onclick="loadMore();">Xem
+                                    thêm<span></span></button>
+                            </div>
+                        <?php } ?>
                     </div>
-                    <hr>
-                    <?php
-                }
-            } else {
-                echo "Đang cập nhật";
-            } ?>
-
-            <div id="last-comment">
-            </div>
-            <input type="hidden" name="page" id="page"
-                   value="<?= sizeof($listNews) - 1 ?>">
-            <input type="hidden" name="numberCount" id="numberCount" value="<?= sizeof($listNews) ?>">
-            <input type="hidden" name="total" id="total" value="<?= $pages->totalCount ?>">
-            <?php if (count($listNews) >= 6) { ?>
-                <div style="margin-bottom: 20px" class="view-more-page tac text-center">
-                    <button class="btn btn-primary next page-numbers" id="more" onclick="loadMore();">Xem
-                        thêm<span></span></button>
+                    <?= \frontend\widgets\Header::actiongMenuRight() ?>
                 </div>
-            <?php } ?>
+            </div>
         </div>
-        <?= \frontend\widgets\Header::actiongMenuRight($type) ?>
     </div>
-</div>
-
-<!--End Main Container -->
+</section>
 
 <script type="text/javascript">
     function loadMore() {
         var url = '<?= Url::toRoute(['site/get-news'])?>';
-        var type = '<?= $type ?>';
         var page = parseInt($('#page').val()) + 1;
         var total = parseInt(($('#total').val()));
         var numberCount = parseInt($('#numberCount').val()) + 6;
@@ -97,7 +169,6 @@ $this->title = 'Tin tức làm đẹp';
             url: url,
             data: {
                 'page': page,
-                'type': type
             },
             type: "GET",
             crossDomain: true,

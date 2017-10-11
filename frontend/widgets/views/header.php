@@ -50,8 +50,9 @@ use yii\helpers\Url;
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand our_logo" href="#"><img style="width: 110px"
-                                                                           src="images/logo.png" alt=""/></a>
+                            <a class="navbar-brand our_logo" href="<?= Url::home() ?>">
+                                <img style="width: 110px" src="images/logo.png" alt=""/>
+                            </a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,9 +60,15 @@ use yii\helpers\Url;
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#slider">Trang chủ</a></li>
-                                <li><a href="#slider">Shipfood</a></li>
-                                <li><a href="#food">Bữa ăn</a></li>
-                                <li><a href="#drinks">Đồ uống</a></li>
+                                <li><a href="#abouts">Giới thiệu</a></li>
+                                <li><a href="#">Thực đơn</a>
+                                    <ul>
+                                        <li><a href="#food">Đồ ăn</a></li>
+                                        <li><a href="#drinks">Đồ uống</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="<?= Url::to(['site/news']) ?>">Tin tức</a></li>
+                                <li><a href="#">Tuyển Dụng</a></li>
                                 <li><a href="#vegetable">Rau sạch</a></li>
                                 <li><a href="#mobaileapps">Tải app</a></li>
                                 <li><a href="#footer">Liên hệ</a></li>
