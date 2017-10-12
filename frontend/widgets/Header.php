@@ -7,6 +7,8 @@ use common\models\Book;
 use common\models\Category;
 use common\models\InfoPublic;
 use common\models\News;
+use frontend\models\ContactUser;
+use frontend\models\SignupForm;
 use yii\base\Widget;
 
 /**
@@ -20,8 +22,10 @@ class Header extends Widget
     public function run()
     {
         $link_image_logo = '';
+        $model = new ContactUser();
         return $this->render('header', [
             'link_image_logo' => $link_image_logo,
+            'model' => $model,
         ]);
     }
 

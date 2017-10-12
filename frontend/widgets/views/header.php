@@ -1,7 +1,8 @@
 <?php
 use common\models\News;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 use yii\helpers\Url;
-
 ?>
 <div class='preloader'>
     <div class='loaded'>&nbsp;</div>
@@ -68,15 +69,50 @@ use yii\helpers\Url;
                                     </ul>
                                 </li>
                                 <li><a href="<?= Url::to(['site/news']) ?>">Tin tức</a></li>
-                                <li><a href="#">Tuyển Dụng</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#myModal">Tuyển Dụng</a></li>
                                 <li><a href="#vegetable">Rau sạch</a></li>
                                 <li><a href="#mobaileapps">Tải app</a></li>
                                 <li><a href="#footer">Liên hệ</a></li>
                             </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
     </div>
 </header>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title" id="myModalLabel">Điền thông tin cá nhân </h5>
+            </div>
+            <div class="modal-body">
+                <?php $form = ActiveForm::begin([
+                        'id' => 'form-signup',
+                ]); ?>
+
+                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'email') ?>
+
+                <?= $form->field($model, 'phone')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'subject')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'address')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'part')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'file')->fileInput() ?>
+
+                <div class="form-group text-center">
+                    <?= Html::submitButton('Hoàn thành', ['class' => 'btn btn-danger', 'name' => 'signup-button']) ?>
+                </div>
+
+                <?php ActiveForm::end(); ?>
+            </div>
+        </div>
+    </div>
+</div>
