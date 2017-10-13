@@ -60,19 +60,24 @@ use yii\helpers\Url;
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#slider">Trang chủ</a></li>
-                                <li><a href="#abouts">Giới thiệu</a></li>
+                                <li><a href="<?= Url::home() ?>#slider">Trang chủ</a></li>
+                                <li><a href="<?= Url::home() ?>#abouts">Giới thiệu</a></li>
                                 <li><a href="#">Thực đơn</a>
                                     <ul>
-                                        <li><a href="#food">Đồ ăn</a></li>
-                                        <li><a href="#drinks">Đồ uống</a></li>
+                                        <li><a href="<?= Url::home() ?>#food">Đồ ăn</a></li>
+                                        <li><a href="<?= Url::home() ?>#drinks">Đồ uống</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Thực phẩm</a>
+                                    <ul>
+                                        <li><a href="<?= Url::home() ?>#vegetable">Thực phẩm tự sản xuất</a></li>
+                                        <li><a href="<?= Url::home() ?>#vegetable">Thực phẩm liên kết</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="<?= Url::to(['site/news']) ?>">Tin tức</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#myModal">Tuyển Dụng</a></li>
-                                <li><a href="#vegetable">Rau sạch</a></li>
-                                <li><a href="#mobaileapps">Tải app</a></li>
-                                <li><a href="#footer">Liên hệ</a></li>
+                                <li><a href="<?= Url::home() ?>#mobaileapps">Tải app</a></li>
+                                <li><a href="<?= Url::home() ?>#footer">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
