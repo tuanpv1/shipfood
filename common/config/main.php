@@ -18,7 +18,7 @@ return [
         ],
     ],
     'aliases' => [
-        '@image_affiliate_company' => 'upload/image_affiliate_company',
+        '@image_file' => 'upload/file',
         '@image_banner' => 'upload/image_banner',
         '@image_news' => 'upload/image_news',
     ],

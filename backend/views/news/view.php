@@ -12,7 +12,10 @@ $this->params['breadcrumbs'][] = ['label' => News::getTypeName($model->type), 'u
 $this->params['breadcrumbs'][] = $this->title;
 
 $i_want_to_see_it = false;
-if ($model->type == News::TYPE_ABOUT || $model->type == News::TYPE_VEGETABLES_SX || $model->type == News::TYPE_VEGETABLES_LK) {
+if ($model->type == News::TYPE_ABOUT ||
+    $model->type == News::TYPE_VEGETABLES_SX ||
+    $model->type == News::TYPE_VEGETABLES_LK ||
+    $model->type == News::TYPE_NEWS) {
     $i_want_to_see_it = true;
 }
 ?>

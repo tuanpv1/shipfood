@@ -23,6 +23,7 @@ use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -352,25 +353,29 @@ class SiteController extends Controller
             ->send();
     }
 
-    public function actionSaveBook()
+    public function actionBook()
     {
-        $full_name = ucwords($_POST['full_name']);
-        $phone = $_POST['phone'];
-        $id_dv = $_POST['id_dv'];
-        $start_time = $_POST['start_time'];
-        $old = $_POST['old'];
-
         $model = new Book();
-        $model->full_name = $full_name;
-        $model->phone = $phone;
-        $model->time_start = strtotime($start_time);
-        $model->id_dv = $id_dv;
-        $model->status = Book::STATUS_BOOKED;
-        $model->old = $old;
-        if (!$model->save()) {
-            Yii::info($model->getErrors());
-            return Json::encode(['success' => false, 'message' => 'Không đặt lịch hẹn thành công']);
+        if ($model->load(Yii::$app->request->post())) {
+            $image = UploadedFile::getInstance($model, 'file');
+            if ($image) {
+                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image->extension;
+                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_file') . '/';
+                if ($image->saveAs($tmp . $file_name)) {
+                    $model->file = $file_name;
+                }
+            }
+            $model->time_start = time();
+            if ($model->save()) {
+                Yii::$app->getSession()->setFlash('success', 'Ứng tuyển thành công');
+//                return Json::encode(['success' => true, 'message' => 'Chúc mừng khách hàng ' . $full_name . ' đã đặt lịch hẹn thành công']);
+                return $this->redirect(['site/index']);
+            } else {
+                Yii::$app->getSession()->setFlash('error', 'Ứng tuyển không thành công');
+                Yii::info($model->getErrors());
+                return $this->redirect(['site/index']);
+//                return Json::encode(['success' => false, 'message' => 'Không đặt lịch hẹn thành công']);
+            }
         }
-        return Json::encode(['success' => true, 'message' => 'Chúc mừng khách hàng ' . $full_name . ' đã đặt lịch hẹn thành công']);
     }
 }

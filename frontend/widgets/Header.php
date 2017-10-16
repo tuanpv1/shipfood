@@ -22,7 +22,7 @@ class Header extends Widget
     public function run()
     {
         $info = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
-        $model = new ContactUser();
+        $model = new Book();
         return $this->render('header', [
             'info' => $info,
             'model' => $model,

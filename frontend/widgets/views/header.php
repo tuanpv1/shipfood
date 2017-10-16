@@ -51,7 +51,8 @@ use yii\helpers\Url;
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand our_logo" href="<?= Url::home() ?>">
-                                <img style="width: 110px" src="<?= $info->getImageLink() ?>" alt="<?= $info->image_footer ?>"/>
+                                <img style="width: 110px" src="<?= $info->getImageLink() ?>"
+                                     alt="<?= $info->image_footer ?>"/>
                             </a>
                         </div>
 
@@ -89,25 +90,28 @@ use yii\helpers\Url;
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h5 class="modal-title" id="myModalLabel">Điền thông tin cá nhân </h5>
             </div>
             <div class="modal-body">
                 <?php $form = ActiveForm::begin([
-                        'id' => 'form-signup',
+                    'id' => 'form-signup',
+                    'action' => Url::to(['site/book']),
+                    'options' => ['enctype' => 'multipart/form-data'],
                 ]); ?>
 
-                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'full_name')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'email') ?>
 
                 <?= $form->field($model, 'phone')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'subject')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'position')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'address')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'part')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'id_dv')->dropDownList(\common\models\Book::listShift()) ?>
 
                 <?= $form->field($model, 'file')->fileInput() ?>
 

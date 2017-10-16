@@ -96,7 +96,18 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['old', 'id_dv', 'time_start', 'created_at', 'updated_at','status'], 'integer'],
             [['full_name', 'phone', 'email'], 'string', 'max' => 255],
-            [['full_name','time_start','phone','id_dv'],'required'],
+            [
+                [
+                    'full_name',
+                    'phone',
+                    'id_dv',
+                    'email',
+                    'position',
+                    'file',
+                ],
+                'required',
+                'message'=>Yii::t('app','{attribute} không được để trống'),
+            ],
             ['address','string','max'=>700],
             ['position','string','max'=>255],
             ['file','string','max'=>500],
