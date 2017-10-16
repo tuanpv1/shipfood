@@ -75,11 +75,12 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
 
     <?= $form->field($model, 'short_description')->textarea(['rows' => 4]) ?>
 
-    <?php if ($type != News::TYPE_ABOUT) { ?>
+    <?php $list_type = [News::TYPE_NEWS,News::TYPE_ABOUT];
+    if (!in_array($type,$list_type)) { ?>
 
         <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
-    <?php } if($type == News::TYPE_ABOUT || $type == News::TYPE_VEGETABLES_LK || $type == News::TYPE_VEGETABLES_SX){ ?>
+    <?php } if($type == News::TYPE_ABOUT || $type == News::TYPE_VEGETABLES_LK || $type == News::TYPE_VEGETABLES_SX || $type == News::TYPE_NEWS){ ?>
 
         <?= $form->field($model, 'content')->widget(\common\widgets\CKEditor::className(), [
             'preset' => 'full',

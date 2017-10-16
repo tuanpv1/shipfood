@@ -21,7 +21,7 @@ class Header extends Widget
 {
     public function run()
     {
-        $info  = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
+        $info = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
         $model = new ContactUser();
         return $this->render('header', [
             'info' => $info,
@@ -31,32 +31,22 @@ class Header extends Widget
 
     public static function actiongMenuRight()
     {
-//        $listDv = News::find()
-//            ->andWhere(['status' => News::STATUS_ACTIVE])
-//            ->andWhere(['type' => News::TYPE_DV])
-//            ->limit(5)
-//            ->all();
-        $listQt = null;
-//        if ($type == News::TYPE_NEWS) {
-//            $listQt = News::find()
-//                ->andWhere(['type' => News::TYPE_DV])
-//                ->andWhere(['status' => News::STATUS_ACTIVE])
-//                ->limit(6)->all();
-//        } elseif ($type == News::TYPE_DV) {
-//            $listQt = News::find()
-//                ->andWhere(['type' => News::TYPE_CN])
-//                ->andWhere(['status' => News::STATUS_ACTIVE])
-//                ->limit(6)->all();
-//        } elseif ($type == News::TYPE_CN) {
-//            $listQt = News::find()
-//                ->andWhere(['type' => News::TYPE_NEWS])
-//                ->andWhere(['status' => News::STATUS_ACTIVE])
-//                ->limit(6)->all();
-//        }
+        $listFood = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['IN', 'type' => [News::TYPE_FOOD_MORNING, News::TYPE_FOOD_LUNCH]])
+            ->orderBy(['id' => SORT_DESC])
+            ->limit(5)
+            ->all();
+        $listDrink = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['=', 'type' => [News::TYPE_DRINK]])
+            ->orderBy(['id' => SORT_DESC])
+            ->limit(5)
+            ->all();
         $st = new Header();
         return $st->render('menu-right', [
-//            'listDv' => $listDv,
-            'listQt' => $listQt,
+            'listDrink' => $listDrink,
+            'listFood' => $listFood,
         ]);
     }
 }

@@ -21,10 +21,6 @@ $this->params['breadcrumbs'][] = 'Cập nhật';
                 <?= $this->render('_form', [
                     'model' => $model,
                     'type'=>$model->type,
-                    'thumbnailInit' => $thumbnailInit,
-                    'thumbnailPreview' => $thumbnailPreview,
-                    'imageDesInit' => $imageDesInit,
-                    'imageDesPreview' => $imageDesPreview,
                 ]) ?>
             </div>
         </div>

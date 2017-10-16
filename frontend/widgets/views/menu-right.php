@@ -12,8 +12,8 @@ use yii\helpers\Url;
 <div class="col-md-3">
     <h4>Top đồ ăn ưa chuộng</h4>
     <div class="list-food">
-        <?php if ($listQt) {
-            foreach ($listQt as $item) {
+        <?php if ($listFood) {
+            foreach ($listFood as $item) {
                 /** @var News $item */
                 ?>
                 <div class="row" style="padding-top: 20px">
@@ -81,8 +81,8 @@ use yii\helpers\Url;
     <br>
     <h4>Top đồ uống ưa chuộng</h4>
     <div class="list-food">
-        <?php if ($listQt) {
-            foreach ($listQt as $item) {
+        <?php if ($listDrink) {
+            foreach ($listDrink as $item) {
                 /** @var News $item */
                 ?>
                 <div class="row" style="padding-top: 20px">
