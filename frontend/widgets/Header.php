@@ -21,10 +21,10 @@ class Header extends Widget
 {
     public function run()
     {
-        $link_image_logo = '';
+        $info  = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
         $model = new ContactUser();
         return $this->render('header', [
-            'link_image_logo' => $link_image_logo,
+            'info' => $info,
             'model' => $model,
         ]);
     }

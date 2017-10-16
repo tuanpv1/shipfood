@@ -9,6 +9,9 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model common\models\InfoPublic */
 /* @var $form yii\widgets\ActiveForm */
+
+$avatarPreview = !$model->isNewRecord && !empty($model->image_header);
+
 ?>
 
 <div class="form-body">
@@ -18,40 +21,34 @@ use yii\helpers\Url;
         'type' => ActiveForm::TYPE_HORIZONTAL,
         'fullSpan' => 8,
     ]); ?>
-    <?php if ($model->isNewRecord) { ?>
-    <?= $form->field($model, 'image_header')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*'],
+    <?= $form->field($model, 'image_header')->widget(\kartik\file\FileInput::classname(), [
         'pluginOptions' => [
-            'showPreview' => true,
-            'overwriteInitial' => false,
-            'showRemove' => false,
-            'showUpload' => false
-        ]
-    ])->hint(Yii::t('app','Vui lòng tải hình ảnh có kích thước 143*80 để hiển thị tốt nhất ')); ?>
-    <?php } else { ?>
-        <?= $form->field($model, 'image_header')->widget(FileInput::classname(), [
-            'options' => ['accept' => 'image/*'],
-            'pluginOptions' => [
-                'previewFileType' => 'any',
-                'initialPreview' => [
-                    Html::img(Url::to(InfoPublic::getImage($model->image_header)), ['class' => 'file-preview-image', 'alt' => $model->image_header, 'title' => $model->image_header]),
-                ],
-                'showPreview' => true,
-                'initialCaption' => InfoPublic::getImage($model->image_header),
-                'overwriteInitial' => true,
-                'showRemove' => false,
-                'showUpload' => false
-            ]
-        ])->hint(Yii::t('app','Vui lòng tải hình ảnh có kích thước 143*80 để hiển thị tốt nhất ')); ?>
-    <?php } ?>
 
+            'showCaption' => false,
+            'showRemove' => false,
+            'showUpload' => false,
+            'browseClass' => 'btn btn-primary btn-block',
+            'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
+            'browseLabel' => 'Chọn hình ảnh',
+            'initialPreview' => $avatarPreview ? [
+                Html::img(Yii::getAlias('@web') . '/' . Yii::getAlias('@image_banner') . "/" . $model->image_header, ['class' => 'file-preview-image', 'style' => 'width: 100%;']),
+
+            ] : [],
+        ],
+        'options' => [
+            'accept' => 'image/*',
+        ],
+    ])->hint(Yii::t('app','Vui lòng tải hình ảnh có kích thước 1920*700 px để hiển thị tốt nhất '));
+    ?>
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image_footer')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image_menu')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'link_face')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'youtube')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'twitter')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 

@@ -10,9 +10,12 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property integer $id
  * @property string $full_name
+ * @property string $position
+ * @property string $address
  * @property integer $old
  * @property string $phone
  * @property string $email
+ * @property string $file
  * @property integer $id_dv
  * @property integer $status
  * @property integer $time_start
@@ -26,6 +29,28 @@ class Book extends \yii\db\ActiveRecord
     const STATUS_COME = 9;
     const STUTUS_CONFIRM = 10;
 
+    const PART_S = 1;
+    const PART_C = 2;
+    const FULL = 3;
+
+    public static function listShift()
+    {
+        $lst = [
+            self::PART_S => 'Ca sáng',
+            self::PART_C => 'Ca chiều',
+            self::FULL => 'Full Time',
+        ];
+        return $lst;
+    }
+
+    public function getShiftName()
+    {
+        $lst = self::listShift();
+        if (array_key_exists($this->status, $lst)) {
+            return $lst[$this->status];
+        }
+        return $this->status;
+    }
 
     public static function listStatus()
     {
@@ -71,7 +96,10 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['old', 'id_dv', 'time_start', 'created_at', 'updated_at','status'], 'integer'],
             [['full_name', 'phone', 'email'], 'string', 'max' => 255],
-            [['full_name','time_start','phone','id_dv'],'required']
+            [['full_name','time_start','phone','id_dv'],'required'],
+            ['address','string','max'=>700],
+            ['position','string','max'=>255],
+            ['file','string','max'=>500],
         ];
     }
 
@@ -84,13 +112,15 @@ class Book extends \yii\db\ActiveRecord
             'id' => 'ID',
             'full_name' => 'Họ và tên',
             'old' => 'Số tuổi',
+            'address' => 'Địa chỉ',
+            'position' => 'Vị trí ứng tuyển',
             'phone' => 'Số điện thoại',
             'email' => 'Email',
             'status' => 'Trạng thái',
-            'id_dv' => 'Tên dịch vụ',
-            'time_start' => 'Thời gian hẹn đến Spa',
+            'id_dv' => 'Ca làm việc',
             'created_at' => 'Thời gian đặt lịch',
             'updated_at' => 'Thời gian thay đổi thông tin',
+            'file' => 'Hồ sơ',
         ];
     }
 }

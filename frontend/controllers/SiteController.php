@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Book;
 use common\models\Email;
+use common\models\InfoPublic;
 use common\models\IpAddressTable;
 use common\models\TableAgency;
 use Yii;
@@ -84,31 +85,40 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $listBanner = Banner::findAll(['status' => Banner::STATUS_ACTIVE]);
+//        $listBanner = Banner::findAll(['status' => Banner::STATUS_ACTIVE]);
 
-//        $listCn = News::find()
-//            ->andWhere(['status' => News::STATUS_ACTIVE])
-//            ->andWhere(['type' => News::TY])
-//            ->orderBy(['updated_at' => SORT_DESC])
-//            ->limit(4)
-//            ->all();
-//
-//        $gioithieu = News::find()->andWhere(['status' => News::STATUS_ACTIVE])
-//            ->andWhere(['type' => News::TYPE_ABOUT])
-//            ->orderBy(['updated_at' => SORT_DESC])->one();
-//
-//        $listDv = News::find()
-//            ->andWhere(['status' => News::STATUS_ACTIVE])
-//            ->andWhere(['type' => News::TYPE_DV])
-//            ->orderBy(['updated_at' => SORT_DESC])
-//            ->limit(20)
-//            ->all();
+        $listVegetable = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['IN', 'type', [News::TYPE_VEGETABLES_LK, News::TYPE_VEGETABLES_SX]])
+            ->orderBy(['updated_at' => SORT_DESC])
+            ->all();
+
+        $gioithieu = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['type' => News::TYPE_ABOUT])
+            ->orderBy(['updated_at' => SORT_DESC])
+            ->one();
+
+        $listDrink = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['type' => News::TYPE_DRINK])
+            ->orderBy(['updated_at' => SORT_DESC])
+            ->all();
+
+        $listFood = News::find()
+            ->andWhere(['status' => News::STATUS_ACTIVE])
+            ->andWhere(['IN', 'type', [News::TYPE_FOOD_LUNCH, News::TYPE_FOOD_MORNING]])
+            ->orderBy(['updated_at' => SORT_DESC])
+            ->all();
+
+        $info = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
 
         return $this->render('index', [
-//            'listCn' => $listCn,
-//            'gioithieu' => $gioithieu,
-//            'listDv' => $listDv,
-            'listBanner' => $listBanner,
+            'listVegetable' => $listVegetable,
+            'gioithieu' => $gioithieu,
+            'listFood' => $listFood,
+            'info' => $info,
+            'listDrink' => $listDrink,
         ]);
     }
 
@@ -278,7 +288,7 @@ class SiteController extends Controller
         $cat = null;
         $listNews = News::find()
             ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['<>','type',News::TYPE_ABOUT]);
+            ->andWhere(['=', 'type', News::TYPE_NEWS]);
 //
         $listNews->orderBy(['updated_at' => SORT_DESC]);
         $countQuery = clone $listNews;
@@ -291,8 +301,6 @@ class SiteController extends Controller
         return $this->render('index-news', [
             'listNews' => $models,
             'pages' => $pages,
-//            'type' => $type,
-//            'cat' => $cat,
         ]);
 
     }
@@ -301,7 +309,7 @@ class SiteController extends Controller
     {
         $model = News::findOne(['id' => $id]);
         $view_old = $model->view_count;
-        if($view_old == ''){
+        if ($view_old == '') {
             $view_old = 0;
         }
         $model->view_count = $view_old + 1;
@@ -309,54 +317,6 @@ class SiteController extends Controller
         return $this->render('detail-news', [
             'new' => $model
         ]);
-    }
-
-    public function actionInvestment()
-    { // loi ich dau tu
-        $this->layout = 'main-page.php';
-        $listNews = News::find()
-            ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_COMMON])
-            ->orderBy(['updated_at' => SORT_DESC]);
-        $countQuery = clone $listNews;
-        $pages = new Pagination(['totalCount' => $countQuery->count()]);
-        $pageSize = 6;
-        $pages->setPageSize($pageSize);
-        $models = $listNews->offset($pages->offset)
-            ->limit(6)->all();
-        $this->layout = 'main-page.php';
-        return $this->render('investment', [
-            'listNews' => $models,
-            'pages' => $pages,
-        ]);
-    }
-
-    public function actionDistribution()
-    { // he thong phan phoi
-        $this->layout = 'main-page.php';
-        $listDistribution = TableAgency::find()
-            ->andWhere(['status' => TableAgency::STATUS_ACTIVE])
-            ->orderBy(['updated_at' => SORT_DESC])->all();
-        return $this->render('distribution', [
-            'model' => $listDistribution,
-        ]);
-    }
-
-    public function actionGetInvestment()
-    {
-
-        $page = $this->getParameter('page');
-
-        $listNews = News::find()
-            ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_COMMON])
-            ->orderBy(['created_at' => SORT_DESC]);
-        $models = $listNews->offset($page)
-            ->limit(6)->all();
-        return $this->renderPartial('_investment', [
-            'listNews' => $models,
-        ]);
-
     }
 
     public function actionGetNews()
@@ -392,7 +352,8 @@ class SiteController extends Controller
             ->send();
     }
 
-    public function actionSaveBook(){
+    public function actionSaveBook()
+    {
         $full_name = ucwords($_POST['full_name']);
         $phone = $_POST['phone'];
         $id_dv = $_POST['id_dv'];
@@ -406,10 +367,10 @@ class SiteController extends Controller
         $model->id_dv = $id_dv;
         $model->status = Book::STATUS_BOOKED;
         $model->old = $old;
-        if(!$model->save()){
+        if (!$model->save()) {
             Yii::info($model->getErrors());
             return Json::encode(['success' => false, 'message' => 'Không đặt lịch hẹn thành công']);
         }
-        return Json::encode(['success' => true, 'message' => 'Chúc mừng khách hàng '.$full_name.' đã đặt lịch hẹn thành công']);
+        return Json::encode(['success' => true, 'message' => 'Chúc mừng khách hàng ' . $full_name . ' đã đặt lịch hẹn thành công']);
     }
 }

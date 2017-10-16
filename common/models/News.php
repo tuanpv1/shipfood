@@ -63,8 +63,10 @@ class News extends \yii\db\ActiveRecord
     const TYPE_FOOD_MORNING = 1;
     const TYPE_FOOD_LUNCH = 2;
     const TYPE_DRINK = 3;
-    const TYPE_VEGETABLES = 4;
-    const TYPE_ABOUT = 5;
+    const TYPE_VEGETABLES_SX = 4;
+    const TYPE_VEGETABLES_LK = 5;
+    const TYPE_ABOUT = 6;
+    const TYPE_NEWS = 7;
 
     const IMAGE_TYPE_THUMBNAIL = 1; //anh dai dien
     const IMAGE_TYPE_DES = 2; //anh mo ta
@@ -127,13 +129,13 @@ class News extends \yii\db\ActiveRecord
                 , 'published_at', 'type_video', 'position', 'id_cat', 'price'], 'integer'],
             [['title', 'user_id', 'price'], 'required'],
             [['video'], 'file', 'extensions' => ['doc', 'docx', 'pdf'], 'maxSize' => 1024 * 1024 * 500, 'tooBig' => 'Video vượt quá dung lượng cho phép!'],
-            [['thumbnail'], 'required', 'on' => 'create'],
+            [['images'], 'required', 'on' => 'create'],
             [['content', 'description'], 'string'],
             [['title', 'title_ascii', 'thumbnail'], 'string', 'max' => 512],
             [['tags', 'source_name', 'source_url'], 'string', 'max' => 200],
             [['short_description', 'video', 'url_video_new'], 'string', 'max' => 1000],
             [['video_url'], 'safe'],
-            [['images', 'thumbnail', 'image_des'], 'image', 'extensions' => 'png,jpg,jpeg,gif',
+            [['images'], 'image', 'extensions' => 'png,jpg,jpeg,gif',
                 'maxSize' => News::MAX_SIZE_UPLOAD, 'tooBig' => 'Ảnh upload vượt quá dung lượng cho phép!'
             ],
         ];
@@ -149,8 +151,7 @@ class News extends \yii\db\ActiveRecord
             'title' => Yii::t('app', 'Tên'),
             'title_ascii' => Yii::t('app', 'Title Ascii'),
             'content' => Yii::t('app', 'Nội dung'),
-            'thumbnail' => Yii::t('app', 'Ảnh đại diện'),
-            'image_des' => Yii::t('app', 'Ảnh mô tả'),
+            'images' => Yii::t('app', 'Ảnh đại diện'),
             'type' => Yii::t('app', 'Loại bài viết'),
             'tags' => Yii::t('app', 'Tags'),
             'short_description' => Yii::t('app', 'Mô tả ngắn'),
@@ -166,12 +167,12 @@ class News extends \yii\db\ActiveRecord
             'source_url' => Yii::t('app', 'Url'),
             'status' => Yii::t('app', 'Trạng thái'),
             'created_user_id' => Yii::t('app', 'Created User ID'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
             'user_id' => Yii::t('app', 'User ID'),
             'price' => Yii::t('app', 'Giá'),
             'position' => Yii::t('app', 'Vị trí'),
-            'id_cat' => Yii::t('app', 'Thuộc danh mục')
+            'id_cat' => Yii::t('app', 'Thuộc danh mục'),
+            'created_at' => Yii::t('app', 'Ngày tạo'),
+            'updated_at' => Yii::t('app', 'Ngày thay đổi thông tin')
         ];
     }
 
@@ -241,8 +242,10 @@ class News extends \yii\db\ActiveRecord
             self::TYPE_FOOD_MORNING => 'Đồ ăn sáng',
             self::TYPE_FOOD_LUNCH => 'Đồ ăn trưa',
             self::TYPE_DRINK => 'Thức uống',
-            self::TYPE_VEGETABLES => 'Thực phẩm',
+            self::TYPE_VEGETABLES_SX => 'Thực phẩm tự sản xuất',
+            self::TYPE_VEGETABLES_LK => 'Thực phẩm liên kết',
             self::TYPE_ABOUT => 'Giới thiệu',
+            self::TYPE_NEWS => 'Tin hoạt động',
         ];
         return $lst;
     }
@@ -347,5 +350,9 @@ class News extends \yii\db\ActiveRecord
         return $images;
     }
 
-
+    public function getImageLink()
+    {
+        return $this->images ? Url::to(Yii::getAlias('@web') . DIRECTORY_SEPARATOR . Yii::getAlias('@image_news') . DIRECTORY_SEPARATOR . $this->images, true) : '';
+        // return $this->images ? Url::to('@web/' . Yii::getAlias('@cat_image') . DIRECTORY_SEPARATOR . $this->images, true) : '';
+    }
 }

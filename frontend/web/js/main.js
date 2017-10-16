@@ -56,3 +56,23 @@ jQuery(document).ready(function ($) {
  new WOW().init();
 
 });
+
+function showFoodByCat(check,idShow,idHide) {
+	if(check){
+        $('.item_cat_'+idHide).fadeOut('slow');
+        $('.item_cat_'+idShow).fadeIn('slow');
+	}else{
+        $('.item_cat_'+idHide).fadeIn('slow');
+        $('.item_cat_'+idShow).fadeIn('slow');
+	}
+}
+
+function showVegetableByCat(check,idShow,idHide) {
+	if(check){
+        $('.item_cat_'+idHide).fadeOut('slow');
+        $('.item_cat_'+idShow).fadeIn('slow');
+	}else{
+        $('.item_cat_'+idHide).fadeIn('slow');
+        $('.item_cat_'+idShow).fadeIn('slow');
+	}
+}

@@ -1213,15 +1213,18 @@ li:hover > ul {
     .portfolio_images_overlay h6 {
         font-size: 0.8rem;
         line-height: 1rem;
+        margin-bottom: 5px;
     }
 
     .portfolio_images_overlay p.product_price {
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: 0.6rem;
+        margin-bottom: 5px;
     }
 
     .portfolio_images_overlay p.product_info {
         font-size: 0.5rem;
+        line-height: 1rem;
     }
 
     .main_portfolio_content .ship-img {
@@ -1243,5 +1246,10 @@ li:hover > ul {
 
     .single_pakeg_one {
         padding: 20px 0px 10px 0px;
+    }
+
+    .portfolio_images_overlay{
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 }

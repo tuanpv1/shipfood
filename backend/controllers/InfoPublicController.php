@@ -81,28 +81,6 @@ class InfoPublicController extends Controller
                     $model->image_header = $file_name;
                 }
             }
-            $image_footer = UploadedFile::getInstance($model, 'image_footer');
-            if ($image_footer) {
-                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_footer->extension;
-                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
-                if (!file_exists($tmp)) {
-                    mkdir($tmp, 0777, true);
-                }
-                if ($image_footer->saveAs($tmp . $file_name)) {
-                    $model->image_footer = $file_name;
-                }
-            }
-            $image_menu = UploadedFile::getInstance($model, 'image_menu');
-            if ($image_menu) {
-                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_menu->extension;
-                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
-                if (!file_exists($tmp)) {
-                    mkdir($tmp, 0777, true);
-                }
-                if ($image_menu->saveAs($tmp . $file_name)) {
-                    $model->image_menu = $file_name;
-                }
-            }
             $model->status = InfoPublic::STATUS_ACTIVE;
             if ($model->save(false)) {
                 \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Thêm mới thông tin thành công'));
@@ -128,8 +106,6 @@ class InfoPublicController extends Controller
     {
         $model = $this->findModel($id);
         $old_image_header = $model->image_header;
-        $old_image_footer = $model->image_footer;
-        $old_image_menu = $model->image_menu;
         if ($model->load(Yii::$app->request->post())) {
             $image_header = UploadedFile::getInstance($model, 'image_header');
             if ($image_header) {
@@ -139,39 +115,13 @@ class InfoPublicController extends Controller
                     mkdir($tmp, 0777, true);
                 }
                 if ($image_header->saveAs($tmp . $file_name)) {
-                    unlink($tmp.$old_image_header);
+                    if(file_exists($tmp.$old_image_header)){
+                        unlink($tmp.$old_image_header);
+                    }
                     $model->image_header = $file_name;
                 }
             }else{
                 $model->image_header = $old_image_header;
-            }
-            $image_footer = UploadedFile::getInstance($model, 'image_footer');
-            if ($image_footer) {
-                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_footer->extension;
-                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
-                if (!file_exists($tmp)) {
-                    mkdir($tmp, 0777, true);
-                }
-                if ($image_footer->saveAs($tmp . $file_name)) {
-                    unlink($tmp.$old_image_footer);
-                    $model->image_footer = $file_name;
-                }
-            }else{
-                $model->image_footer = $old_image_footer;
-            }
-            $image_menu = UploadedFile::getInstance($model, 'image_menu');
-            if ($image_menu) {
-                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_menu->extension;
-                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
-                if (!file_exists($tmp)) {
-                    mkdir($tmp, 0777, true);
-                }
-                if ($image_menu->saveAs($tmp . $file_name)) {
-                    unlink($tmp.$old_image_menu);
-                    $model->image_menu = $file_name;
-                }
-            }else{
-                $model->image_menu = $old_image_menu;
             }
             if ($model->update(false)) {
                 \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Cập nhật thông tin thành công'));
@@ -195,15 +145,16 @@ class InfoPublicController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        $model->status = InfoPublic::STATUS_DELETED;
-        if($model->update(false)){
-            \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Xóa thông tin thành công'));
-            return $this->redirect(['index']);
-        }else{
-            \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'Xóa thông tin không thành thành công'));
-            return $this->render('view', ['model' => $model]);
-        }
+        throw new NotFoundHttpException('The requested page does not exist.');
+//        $model = $this->findModel($id);
+//        $model->status = InfoPublic::STATUS_DELETED;
+//        if($model->update(false)){
+//            \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Xóa thông tin thành công'));
+//            return $this->redirect(['index']);
+//        }else{
+//            \Yii::$app->getSession()->setFlash('error', Yii::t('app', 'Xóa thông tin không thành thành công'));
+//            return $this->render('view', ['model' => $model]);
+//        }
     }
 
     /**

@@ -27,43 +27,34 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
             <div class="portlet-body">
-
-                <p>
-                    <?= Html::a('Thêm lịch hẹn', ['create'], ['class' => 'btn btn-success']) ?>
-                </p>
                 <?= GridView::widget([
                     'dataProvider' => $dataProvider,
                     'filterModel' => $searchModel,
                     'columns' => [
                         ['class' => 'yii\grid\SerialColumn'],
                         'full_name',
-                        'phone',
                         [
-                            'attribute' => 'name_dv',
-                            'label'=>'Tên dịch vụ',
+                            'class' => '\kartik\grid\DataColumn',
+                            'attribute' => 'id_dv',
+                            'format' => 'html',
                             'value' => function ($model, $key, $index, $widget) {
-                                /* @var \common\models\Book  $model */
-                                return News::findOne($model->id_dv)->title;
+                                /** @var $model \common\models\Book */
+                                return $model->getShiftName();
                             },
+                            'filterType' => GridView::FILTER_SELECT2,
+                            'filter' => Book::listShift(),
+                            'filterWidgetOptions' => [
+                                'pluginOptions' => ['allowClear' => true],
+                            ],
+                            'filterInputOptions' => ['placeholder' => "Tất cả"],
                         ],
                         [
-                            'attribute'           => 's_start_time',
-                            'label'=>'Thời gian hẹn đến spa',
-                            'filterType'          => GridView::FILTER_DATE,
-                            'filterWidgetOptions' => [
-                                'pluginOptions' => [
-                                    'format'            => 'dd-mm-yyyy',
-                                    'disableMousewheel' => false,
-                                    'saveFormat'        => 'php:U',
-                                    'autoClose'         => true,
-                                ],
-                            ],
-                            'options'             => [
-                                'width' => '200',
-                            ],
-                            'value'               => function ($model) {
-                                /* @var \common\models\Book  $model */
-                                return date('d-m-Y  H:i:s', $model->time_start);
+                            'class' => '\kartik\grid\DataColumn',
+                            'attribute' => 'position',
+                            'format' => 'html',
+                            'value' => function ($model, $key, $index, $widget) {
+                                /** @var $model \common\models\Book */
+                                return $model->position;
                             },
                         ],
                         [
@@ -93,23 +84,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             'filterInputOptions' => ['placeholder' => "Tất cả"],
                         ],
                         [
-                            'attribute'           => 's_created_at',
-                            'label'=>'Thời gian đặt lịch',
-                            'filterType'          => GridView::FILTER_DATE,
-                            'filterWidgetOptions' => [
-                                'pluginOptions' => [
-                                    'format'            => 'dd-mm-yyyy',
-                                    'disableMousewheel' => false,
-                                    'saveFormat'        => 'php:U',
-                                    'autoClose'         => true,
-                                ],
-                            ],
-                            'options'             => [
-                                'width' => '200',
-                            ],
-                            'value'               => function ($model) {
-                                /* @var \common\models\Book  $model */
-                                return date('d-m-Y  H:i:s', $model->created_at);
+                            'class' => '\kartik\grid\DataColumn',
+                            'attribute' => 'file',
+                            'format' => 'html',
+                            'value' => function ($model, $key, $index, $widget) {
+                                /** @var $model \common\models\Book */
+                                return $model->file;
                             },
                         ],
 

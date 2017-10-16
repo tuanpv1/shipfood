@@ -75,13 +75,13 @@ class InfoPublic extends \yii\db\ActiveRecord
             ['image_header','required','message'=>Yii::t('app','{attribute} không được để trống'),'on'=>'create'],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'email','message'=>Yii::t('app','{attribute} không hợp lệ!')],
-            [['image_footer','image_header','image_menu'],
+            [['image_header'],
                 'file',
                 'tooBig'         => Yii::t('app','{attribute} vượt quá dung lượng cho phép. Vui lòng thử lại'),
                 'wrongExtension' => Yii::t('app','{attribute} không đúng định dạng'),
                 'uploadRequired' => Yii::t('app','{attribute} không được để trống'),
                 'extensions'     => 'png, jpg, jpeg, gif',
-                'maxSize'        => 1024 * 1024 * 10
+                'maxSize'        => 1024 * 1024 * 5
             ],
         ];
     }
@@ -94,10 +94,10 @@ class InfoPublic extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app','ID'),
             'image_header' => Yii::t('app','Hình ảnh logo'),
-            'image_footer' => Yii::t('app','Hình ảnh logo footer'),
-            'image_menu' => Yii::t('app','Hình ảnh logo giới thiệu'),
+            'image_footer' => Yii::t('app','Tiêu đề hiển thị trên trang chủ'),
+            'image_menu' => Yii::t('app','Mô tả ngắn'),
             'email' => Yii::t('app','Email'),
-            'phone' => Yii::t('app','Tel1'),
+            'phone' => Yii::t('app','Số điện thoại'),
             'link_face' => Yii::t('app','Link facebook'),
             'youtube' => Yii::t('app','Link youtube'),
             'twitter' => Yii::t('app','Link twitter'),
@@ -114,5 +114,10 @@ class InfoPublic extends \yii\db\ActiveRecord
         if ($image) {
             return Url::to(Yii::getAlias('@web') . '/' . Yii::getAlias('@image_banner') . '/' . $image, true);
         }
+    }
+
+    public function getImageLink()
+    {
+        return $this->image_header?Url::to(Yii::getAlias('@web') . '/' . Yii::getAlias('@image_banner') . '/' . $this->image_header, true):'';
     }
 }

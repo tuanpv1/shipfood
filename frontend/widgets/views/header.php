@@ -1,8 +1,11 @@
 <?php
+use common\models\InfoPublic;
 use common\models\News;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
+
+/** @var $info InfoPublic */
 ?>
 <div class='preloader'>
     <div class='loaded'>&nbsp;</div>
@@ -14,20 +17,16 @@ use yii\helpers\Url;
                 <div class="col-md-5 col-md-offset-3 col-sm-12 text-right">
                     <div class="call_us_text">
                         <a href=""><i class="fa fa-clock-o"></i> Đặt hàng 24/7</a>
-                        <a href=""><i class="fa fa-phone"></i>0123 456 789</a>
+                        <a href=""><i class="fa fa-phone"></i><?= $info->phone ?></a>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
                     <div class="head_top_social text-right">
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-google-plus"></i></a>
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
-                        <a href=""><i class="fa fa-pinterest-p"></i></a>
-                        <a href=""><i class="fa fa-youtube"></i></a>
-                        <a href=""><i class="fa fa-phone"></i></a>
-                        <a href=""><i class="fa fa-camera"></i></a>
+                        <a href="<?= $info->link_face ?>"><i class="fa fa-facebook"></i></a>
+                        <a href="<?= $info->twitter ?>"><i class="fa fa-twitter"></i></a>
+                        <a href="<?= $info->youtube ?>"><i class="fa fa-youtube"></i></a>
+                        <a href="<?= $info->phone ?>"><i class="fa fa-phone"></i></a>
                     </div>
                 </div>
 
@@ -52,7 +51,7 @@ use yii\helpers\Url;
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand our_logo" href="<?= Url::home() ?>">
-                                <img style="width: 110px" src="images/logo.png" alt=""/>
+                                <img style="width: 110px" src="<?= $info->getImageLink() ?>" alt="<?= $info->image_footer ?>"/>
                             </a>
                         </div>
 

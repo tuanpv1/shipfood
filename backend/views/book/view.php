@@ -26,35 +26,34 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="portlet-body">
 
-                <p>
-                    <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-                    <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                        'class' => 'btn btn-danger',
-                        'data' => [
-                            'confirm' => 'Are you sure you want to delete this item?',
-                            'method' => 'post',
-                        ],
-                    ]) ?>
-                </p>
-
                 <?= DetailView::widget([
                     'model' => $model,
                     'attributes' => [
-                        'id',
                         'full_name',
-                        'old',
+                        [
+                            'attribute' => 'old',
+                            'value' => date('d/m/Y', $model->old),
+                        ],
                         'phone',
                         [
                             'attribute' => 'id_dv',
-                            'value' => News::findOne($model->id_dv)->title,
+                            'value' => $model->getShiftName(),
                         ],
                         [
                             'attribute' => 'status',
                             'value' => $model->getStatusName(),
                         ],
                         [
-                            'attribute' => 'time_start',
-                            'value' => date('d/m/Y H:i:s', $model->time_start),
+                            'attribute' => 'address',
+                            'value' => $model->address,
+                        ],
+                        [
+                            'attribute' => 'position',
+                            'value' => $model->position,
+                        ],
+                        [
+                            'attribute' => 'file',
+                            'value' => $model->file,
                         ],
                         [
                             'attribute' => 'created_at',

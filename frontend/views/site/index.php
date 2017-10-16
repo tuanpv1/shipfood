@@ -1,3 +1,11 @@
+<?php
+use common\models\InfoPublic;
+use common\models\News;
+use yii\helpers\Url;
+
+/** @var $info InfoPublic */
+
+?>
 <section id="slider" class="slider">
     <div class="slider_overlay">
         <div class="container">
@@ -5,10 +13,8 @@
                 <div class="main_slider text-center">
                     <div class="col-md-12">
                         <div class="main_slider_content wow zoomIn" data-wow-duration="1s">
-                            <h1>Thương Hiệu Việt</h1>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                quasi. </p>
+                            <h1><?= $info->image_footer ?></h1>
+                            <p><?= $info->image_menu ?></p>
                         </div>
                     </div>
                 </div>
@@ -82,121 +88,37 @@
                 <div class="col-md-12">
                     <div class="head_title text-center">
                         <h4>Bữa ăn</h4>
+                        <a href="<?= Url::home() ?>#food"
+                           onclick="showFoodByCat(false,<?= News::TYPE_FOOD_MORNING ?>,<?= News::TYPE_FOOD_LUNCH ?>)">Tất
+                            cả</a>
+                        <a href="<?= Url::home() ?>#food"
+                           onclick="showFoodByCat(true,<?= News::TYPE_FOOD_MORNING ?>,<?= News::TYPE_FOOD_LUNCH ?>)">Bữa
+                            sáng</a>
+                        <a href="<?= Url::home() ?>#food"
+                           onclick="showFoodByCat(true,<?= News::TYPE_FOOD_MORNING ?>,<?= News::TYPE_FOOD_LUNCH ?>)">Bữa
+                            trưa</a>
                     </div>
 
                     <div class="main_portfolio_content">
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p1.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p2.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p3.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p4.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p5.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p6.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p7.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img src="images/p8.png" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <h6>Bò Hầm</h6>
-                                <p class="product_price">35.000 VND</p>
-                                <p class="product_info">
-                                    Cơm <br>
-                                    Thịt bò xào<br>
-                                    Đậu bắp luộc <br>
-                                    Lạc Rang <br>
-                                    Cá viên <br>
-                                </p>
-                            </div>
-                        </div>
+                        <?php
+                        if ($listFood) {
+                            foreach ($listFood as $food) {
+                                /** @var $food News */
+                                ?>
+                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text item_cat_<?= $food->type ?>">
+                                    <img src="<?= $food->getImageLink() ?>" alt=""/>
+                                    <div class="portfolio_images_overlay text-center">
+                                        <h6><?= $food->title ?></h6>
+                                        <p class="product_price"><?= News::formatNumber($food->price) ?> VND</p>
+                                        <p class="product_info">
+                                            <?= $food->short_description ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -216,11 +138,16 @@
                             </div>
 
                             <ul>
-                                <li> Nước chanh leo.................................................35.000 VND</li>
-                                <li> Nước chanh leo.................................................35.000 VND</li>
-                                <li> Nước chanh leo.................................................35.000 VND</li>
-                                <li> Nước chanh leo.................................................35.000 VND</li>
-                                <li> Nước chanh leo.................................................35.000 VND</li>
+                                <?php
+                                    if($listDrink){
+                                        foreach ($listDrink as $drink){
+                                            /** @var $drink News*/
+                                            ?>
+                                            <li><?= $drink->title ?>..............................................<?= News::formatNumber($drink->price) ?> VND</li>
+                                            <?php
+                                        }
+                                    }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -237,81 +164,39 @@
                 <div class="col-md-12">
                     <div class="head_title text-center">
                         <h4>Từ nông trại đến bàn ăn</h4>
+                        <a href="<?= Url::home() ?>#vegetable"
+                           onclick="showVegetableByCat(false,<?= News::TYPE_VEGETABLES_SX ?>,<?= News::TYPE_VEGETABLES_LK ?>)">
+                            Tất cả
+                        </a>
+                        <a href="<?= Url::home() ?>#vegetable"
+                           onclick="showVegetableByCat(true,<?= News::TYPE_VEGETABLES_SX ?>,<?= News::TYPE_VEGETABLES_LK ?>)">
+                            <?= News::getTypeName(News::TYPE_VEGETABLES_SX) ?>
+                        </a>
+                        <a href="<?= Url::home() ?>#vegetable"
+                           onclick="showVegetableByCat(true,<?= News::TYPE_VEGETABLES_LK ?>,<?= News::TYPE_VEGETABLES_SX ?>)">
+                            <?= News::getTypeName(News::TYPE_VEGETABLES_LK) ?>
+                        </a>
                     </div>
 
                     <div class="main_portfolio_content">
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable1.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable2.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable3.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable4.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable2.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable1.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Bò Hầm</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable4.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text">
-                            <img class="ship-img" src="images/vegetable3.jpg" alt=""/>
-                            <div class="portfolio_images_overlay text-center">
-                                <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-                                    <h6>Đậu bắp</h6>
-                                    <p class="product_price">35.000 VND</p>
-                                </a>
-                            </div>
-                        </div>
+                        <?php
+                        if ($listVegetable) {
+                            foreach ($listVegetable as $vegetable) {
+                                /** @var $vegetable News */
+                                ?>
+                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text item_cat_<?= $vegetable->type?>">
+                                    <img class="ship-img" src="<?= $vegetable->getImageLink() ?>" title="<?= $vegetable->title ?>" alt="<?= $vegetable->title ?>"/>
+                                    <div class="portfolio_images_overlay text-center">
+                                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                            <h6><?= $vegetable->title ?></h6>
+                                            <p class="product_price"><?= News::formatNumber($vegetable->price) ?> VND</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,8 @@ $visible_village = false;
                         'attribute' => 'images',
                         'format' => 'raw',
                         'value' => function ($model, $key, $index, $widget) {
-                            $link = $model->getFirstImageLink();
+                            /** @var $model \common\models\News */
+                            $link = $model->getImageLink();
                             return $link ? Html::img($link, ['alt' => 'Thumbnail', 'width' => '200']) : '';
                         },
                     ],
@@ -57,15 +58,6 @@ $visible_village = false;
                         'value' => function ($model, $key, $index, $widget) {
                             /** @var $model \common\models\News */
                             return $model->price ? News::formatNumber($model->price) . ' VND' : '0 VND';
-                        },
-                    ],
-                    [
-                        'class' => '\kartik\grid\DataColumn',
-                        'attribute' => 'honor',
-                        'format' => 'html',
-                        'value' => function ($model, $key, $index, $widget) {
-                            /** @var $model \common\models\News */
-                            return $model->honor ? $model->honor : 'Chưa đặt thời gian';
                         },
                     ],
                     [

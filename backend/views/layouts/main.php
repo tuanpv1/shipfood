@@ -142,8 +142,18 @@ AppAsset::register($this);
                 ],
                 [
                     'encode' => false,
-                    'label' => News::getTypeName(News::TYPE_VEGETABLES),
-                    'url' => ['news/index', 'type' => News::TYPE_VEGETABLES],
+                    'label' => News::getTypeName(News::TYPE_VEGETABLES_SX),
+                    'url' => ['news/index', 'type' => News::TYPE_VEGETABLES_SX],
+                ],
+                [
+                    'encode' => false,
+                    'label' => News::getTypeName(News::TYPE_VEGETABLES_LK),
+                    'url' => ['news/index', 'type' => News::TYPE_VEGETABLES_LK],
+                ],
+                [
+                    'encode' => false,
+                    'label' => News::getTypeName(News::TYPE_NEWS),
+                    'url' => ['news/index', 'type' => News::TYPE_NEWS],
                 ],
                 [
                     'encode' => false,
@@ -152,11 +162,11 @@ AppAsset::register($this);
                 ],
             ]
         ],
-        [
-            'encode' => false,
-            'label' => Yii::t('app','QL Banner'),
-            'url' => ['banner/index'],
-        ],
+//        [
+//            'encode' => false,
+//            'label' => Yii::t('app','QL Banner'),
+//            'url' => ['banner/index'],
+//        ],
         [
             'encode' => false,
             'label' => $count?'QL Lịch hẹn <span style="color: red" class="icon-ring">('.$count.')</span>':'QL Lịch hẹn',

@@ -22,7 +22,7 @@ class Footer extends  Widget
 
     public function run()
     {
-        $footer = '';
+        $footer = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
         return $this->render('footer',['footer'=>$footer]);
     }
 }

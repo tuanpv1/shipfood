@@ -11,21 +11,17 @@
 
                         <div class="single_widget_info">
                             <p>
-                                <span>Địa chỉ: Số 70 Đường Trần Nhân Tông, Cầu Giấy, Hà Nội</span>
-                                <span class="phone_email">Phone: +84 123 456 789</span>
-                                <span>Email: shipfood@info.com</span>
+                                <span><?= $footer->address ?></span>
+                                <span class="phone_email">Phone: <?= $footer->phone ?></span>
+                                <span>Email: <?= $footer->email ?></span>
                             </p>
                         </div>
 
                         <div class="footer_socail_icon">
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
-                            <a href=""><i class="fa fa-pinterest-p"></i></a>
-                            <a href=""><i class="fa fa-youtube"></i></a>
-                            <a href=""><i class="fa fa-phone"></i></a>
-                            <a href=""><i class="fa fa-camera"></i></a>
+                            <a href="<?= $footer->link_face ?>"><i class="fa fa-facebook"></i></a>
+                            <a href="<?= $footer->twitter ?>"><i class="fa fa-twitter"></i></a>
+                            <a href="<?= $footer->youtube ?>"><i class="fa fa-youtube"></i></a>
+                            <a href="<?= $footer->phone ?>"><i class="fa fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
