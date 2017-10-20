@@ -1,6 +1,7 @@
 <?php
 use common\models\InfoPublic;
 use common\models\News;
+use yii\helpers\Json;
 use yii\helpers\Url;
 
 /** @var $info InfoPublic */
@@ -90,7 +91,7 @@ use yii\helpers\Url;
                            onclick="showFoodByCat(true,<?= News::TYPE_FOOD_MORNING ?>,<?= News::TYPE_FOOD_LUNCH ?>)">Bữa
                             sáng</a>
                         <a href="<?= Url::home() ?>#food"
-                           onclick="showFoodByCat(true,<?= News::TYPE_FOOD_MORNING ?>,<?= News::TYPE_FOOD_LUNCH ?>)">Bữa
+                           onclick="showFoodByCat(true,<?= News::TYPE_FOOD_LUNCH ?>,<?= News::TYPE_FOOD_MORNING ?>)">Bữa
                             trưa</a>
                     </div>
 
@@ -106,7 +107,7 @@ use yii\helpers\Url;
                                         <h6><?= $food->title ?></h6>
                                         <p class="product_price"><?= News::formatNumber($food->price) ?> VND</p>
                                         <p class="product_info">
-                                            <?= $food->short_description ?>
+                                            <?= str_replace(".","<br>",$food->short_description) ?>
                                         </p>
                                     </div>
                                 </div>
@@ -186,7 +187,7 @@ use yii\helpers\Url;
                                     <img class="ship-img" src="<?= $vegetable->getImageLink() ?>"
                                          title="<?= $vegetable->title ?>" alt="<?= $vegetable->title ?>"/>
                                     <div class="portfolio_images_overlay text-center">
-                                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                        <a href="#" onclick="showModal(<?= Json::encode($vegetable) ?>)">
                                             <h6><?= $vegetable->title ?></h6>
                                             <p class="product_price"><?= News::formatNumber($vegetable->price) ?>
                                                 VND</p>

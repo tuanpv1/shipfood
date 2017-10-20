@@ -70,6 +70,12 @@ if ($model->type == News::TYPE_ABOUT ||
                                 'format' => 'raw',
                             ],
                             [
+                                'attribute' => 'price',
+                                'visible' => $i_want_to_see_it ? true : false,
+                                'format' => 'raw',
+                                'value'=>$model->price?News::formatNumber($model->price).' VND':''
+                            ],
+                            [
                                 'attribute' => 'created_at',
                                 'value' => date('d/m/Y H:i:s', $model->created_at),
                             ],

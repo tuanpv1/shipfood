@@ -76,3 +76,8 @@ function showVegetableByCat(check,idShow,idHide) {
         $('.item_cat_'+idShow).fadeIn('slow');
 	}
 }
+
+function showModal(array) {
+	alert(array);
+
+}

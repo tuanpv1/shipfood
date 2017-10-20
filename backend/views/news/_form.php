@@ -70,10 +70,23 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
         'options' => [
             'accept' => 'image/*',
         ],
-    ])->hint(Yii::t('app', 'Vui lòng tải hình ảnh có kích thước 1920*700 px để hiển thị tốt nhất '));
+    ]);
+    ?>
+
+    <?php
+    if($type == News::TYPE_FOOD_MORNING || $type == News::TYPE_FOOD_LUNCH || $type == News::TYPE_ABOUT){
+        echo  "<p style='color: red'>Vui lòng upload hình ảnh đúng kích thước theo tỉ lệ 1:1 ví dụ 200px * 200px<p>";
+    }
+    if($type == News::TYPE_VEGETABLES_LK || $type == News::TYPE_VEGETABLES_SX){
+        echo  "<p style='color: red'>Vui lòng upload hình ảnh đúng kích thước theo tỉ lệ 1,3:1 ví dụ 276px * 200px<p>";
+    }
     ?>
 
     <?= $form->field($model, 'short_description')->textarea(['rows' => 4]) ?>
+
+    <?php if($type == News::TYPE_FOOD_LUNCH || $type == News::TYPE_FOOD_MORNING){
+        echo  "<p style='color: red'>Để trên website hiện xuống dòng nhập dấu . tại vị trí muốn xuống dòng<p>";
+    } ?>
 
     <?php $list_type = [News::TYPE_NEWS,News::TYPE_ABOUT];
     if (!in_array($type,$list_type)) { ?>
