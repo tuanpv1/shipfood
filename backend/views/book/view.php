@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Book */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Books', 'url' => ['index']];
+$this->title = $model->full_name;
+$this->params['breadcrumbs'][] = ['label' => 'QL lịch hẹn', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -53,7 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         [
                             'attribute' => 'file',
-                            'value' => $model->file,
+                            'format'=>'html',
+                            'value' => Html::a(Yii::t('app', 'File hồ sơ'), Yii::getAlias('@web') . '/' . Yii::getAlias('@image_file') . '/' .$model->file),
                         ],
                         [
                             'attribute' => 'created_at',

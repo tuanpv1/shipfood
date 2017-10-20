@@ -46,10 +46,10 @@ class Book extends \yii\db\ActiveRecord
     public function getShiftName()
     {
         $lst = self::listShift();
-        if (array_key_exists($this->status, $lst)) {
-            return $lst[$this->status];
+        if (array_key_exists($this->id_dv, $lst)) {
+            return $lst[$this->id_dv];
         }
-        return $this->status;
+        return $this->id_dv;
     }
 
     public static function listStatus()

@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'format' => 'html',
                             'value' => function ($model, $key, $index, $widget) {
                                 /** @var $model \common\models\Book */
-                                return $model->file;
+                                return Html::a(Yii::t('app', 'File hồ sơ'), Yii::getAlias('@web') . '/' . Yii::getAlias('@image_file') . '/' .$model->file);
                             },
                         ],
 

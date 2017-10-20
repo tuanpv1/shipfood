@@ -366,6 +366,7 @@ class SiteController extends Controller
                 }
             }
             $model->time_start = time();
+            $model->status = Book::STATUS_BOOKED;
             if ($model->save()) {
                 Yii::$app->getSession()->setFlash('success', 'Ứng tuyển thành công');
 //                return Json::encode(['success' => true, 'message' => 'Chúc mừng khách hàng ' . $full_name . ' đã đặt lịch hẹn thành công']);

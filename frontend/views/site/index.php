@@ -4,6 +4,7 @@ use common\models\News;
 use yii\helpers\Url;
 
 /** @var $info InfoPublic */
+/** @var $gioithieu News */
 
 ?>
 <section id="slider" class="slider">
@@ -37,14 +38,8 @@ use yii\helpers\Url;
                 <div class="col-md-6">
                     <div class="single_abouts_text wow slideInRight" data-wow-duration="1s">
                         <h4>Shipfood</h4>
-                        <h3>Chất Lượng - An Toàn - Vệ Sinh</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's stan</p>
-                        <p>dard dummy text ever since the 1500s,when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                            the leap into electronic typesettingdard dummy text ever since the 1500s,when an unknown
-                            printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                            not only five centuries, but also the leap into electronic typesetting</p>
+                        <h3><?= $gioithieu ? $gioithieu->title: "Chất Lượng - An Toàn - Vệ Sinh" ?></h3>
+                        <p><?= $gioithieu->short_description ?></p>
                     </div>
                 </div>
             </div>
@@ -139,14 +134,17 @@ use yii\helpers\Url;
 
                             <ul>
                                 <?php
-                                    if($listDrink){
-                                        foreach ($listDrink as $drink){
-                                            /** @var $drink News*/
-                                            ?>
-                                            <li><?= $drink->title ?>..............................................<?= News::formatNumber($drink->price) ?> VND</li>
-                                            <?php
-                                        }
+                                if ($listDrink) {
+                                    foreach ($listDrink as $drink) {
+                                        /** @var $drink News */
+                                        ?>
+                                        <li><?= $drink->title ?>
+                                            ..............................................<?= News::formatNumber($drink->price) ?>
+                                            VND
+                                        </li>
+                                        <?php
                                     }
+                                }
                                 ?>
                             </ul>
                         </div>
@@ -184,12 +182,14 @@ use yii\helpers\Url;
                             foreach ($listVegetable as $vegetable) {
                                 /** @var $vegetable News */
                                 ?>
-                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text item_cat_<?= $vegetable->type?>">
-                                    <img class="ship-img" src="<?= $vegetable->getImageLink() ?>" title="<?= $vegetable->title ?>" alt="<?= $vegetable->title ?>"/>
+                                <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text item_cat_<?= $vegetable->type ?>">
+                                    <img class="ship-img" src="<?= $vegetable->getImageLink() ?>"
+                                         title="<?= $vegetable->title ?>" alt="<?= $vegetable->title ?>"/>
                                     <div class="portfolio_images_overlay text-center">
                                         <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
                                             <h6><?= $vegetable->title ?></h6>
-                                            <p class="product_price"><?= News::formatNumber($vegetable->price) ?> VND</p>
+                                            <p class="product_price"><?= News::formatNumber($vegetable->price) ?>
+                                                VND</p>
                                         </a>
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@ use yii\helpers\Url;
 
 ?>
 <div class="col-md-3">
-    <h4>Top đồ ăn ưa chuộng</h4>
+    <h5>Top đồ ăn ưa chuộng</h5>
     <div class="list-food">
         <?php if ($listFood) {
             foreach ($listFood as $item) {
@@ -19,7 +19,7 @@ use yii\helpers\Url;
                 <div class="row" style="padding-top: 20px">
                     <div class="col-md-4">
                         <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                            <img style="width: 80px" src="<?= News::getFirstImageLinkTP($item->images) ?>"
+                            <img style="width: 80px" src="<?= $item->getImageLink() ?>"
                                  alt="<?= $item->title ?>" title="<?= $item->title ?>">
                         </a>
                     </div>
@@ -79,7 +79,7 @@ use yii\helpers\Url;
         } ?>
     </div>
     <br>
-    <h4>Top đồ uống ưa chuộng</h4>
+    <h5>Top đồ uống ưa chuộng</h5>
     <div class="list-food">
         <?php if ($listDrink) {
             foreach ($listDrink as $item) {
@@ -88,7 +88,7 @@ use yii\helpers\Url;
                 <div class="row" style="padding-top: 20px">
                     <div class="col-md-4">
                         <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                            <img style="width: 80px" src="<?= News::getFirstImageLinkTP($item->images) ?>"
+                            <img style="width: 80px" src="<?= $item->getImageLink() ?>"
                                  alt="<?= $item->title ?>" title="<?= $item->title ?>">
                         </a>
                     </div>

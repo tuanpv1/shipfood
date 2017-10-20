@@ -32,7 +32,7 @@ $this->title = 'Tin tức';
                                     <div class="row">
                                         <div class="col-md-4">
                                             <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                                                <img src="<?= News::getFirstImageLinkTP($item->images) ?>"
+                                                <img src="<?= $item->getImageLink() ?>"
                                                      alt="<?= $item->title ?>"
                                                      title="<?= $item->title ?>"
                                                      align="right" width="100%" class="blog-image">
