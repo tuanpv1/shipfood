@@ -62,16 +62,27 @@ use yii\helpers\Url;
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="<?= Url::home() ?>#slider">Trang chủ</a></li>
                                 <li><a href="<?= Url::home() ?>#abouts">Giới thiệu</a></li>
-                                <li><a href="#">Thực đơn</a>
+                                <li><a href="<?= Url::home() ?>#food">Thực đơn</a>
                                     <ul>
                                         <li><a href="<?= Url::home() ?>#food">Đồ ăn</a></li>
                                         <li><a href="<?= Url::home() ?>#drinks">Đồ uống</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Thực phẩm</a>
+                                <li><a href="<?= Url::home() ?>#vegetable"
+                                       onclick="showVegetableByCat(false,<?= News::TYPE_VEGETABLES_SX ?>,<?= News::TYPE_VEGETABLES_LK ?>)">Thực phẩm</a>
                                     <ul>
-                                        <li><a href="<?= Url::home() ?>#vegetable">Thực phẩm tự sản xuất</a></li>
-                                        <li><a href="<?= Url::home() ?>#vegetable">Thực phẩm liên kết</a></li>
+                                        <li>
+                                            <a href="<?= Url::home() ?>#vegetable"
+                                               onclick="showVegetableByCat(true,<?= News::TYPE_VEGETABLES_SX ?>,<?= News::TYPE_VEGETABLES_LK ?>)">
+                                                <?= News::getTypeName(News::TYPE_VEGETABLES_SX) ?>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::home() ?>#vegetable"
+                                               onclick="showVegetableByCat(true,<?= News::TYPE_VEGETABLES_LK ?>,<?= News::TYPE_VEGETABLES_SX ?>)">
+                                                <?= News::getTypeName(News::TYPE_VEGETABLES_LK) ?>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="<?= Url::to(['site/news']) ?>">Tin tức</a></li>

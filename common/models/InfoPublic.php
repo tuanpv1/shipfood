@@ -13,6 +13,8 @@ use yii\helpers\Url;
  * @property string $image_header
  * @property string $image_footer
  * @property string $image_menu
+ * @property string $image_android
+ * @property string $image_ios
  * @property string $email
  * @property string $phone
  * @property string $link_face
@@ -75,7 +77,7 @@ class InfoPublic extends \yii\db\ActiveRecord
             ['image_header','required','message'=>Yii::t('app','{attribute} không được để trống'),'on'=>'create'],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'email','message'=>Yii::t('app','{attribute} không hợp lệ!')],
-            [['image_header'],
+            [['image_header','image_android','image_ios'],
                 'file',
                 'tooBig'         => Yii::t('app','{attribute} vượt quá dung lượng cho phép. Vui lòng thử lại'),
                 'wrongExtension' => Yii::t('app','{attribute} không đúng định dạng'),
@@ -83,6 +85,7 @@ class InfoPublic extends \yii\db\ActiveRecord
                 'extensions'     => 'png, jpg, jpeg, gif',
                 'maxSize'        => 1024 * 1024 * 5
             ],
+            [['image_android','image_ios','link_android','link_ios'],'string'],
         ];
     }
 
@@ -106,6 +109,10 @@ class InfoPublic extends \yii\db\ActiveRecord
             'status' => Yii::t('app','trạng thái'),
             'created_at' => Yii::t('app','Ngày tạo'),
             'updated_at' => Yii::t('app','Ngày thay đổi thông tin'),
+            'link_android' => Yii::t('app','Link tải trên CH play'),
+            'image_android' => Yii::t('app','Hình ảnh QR android'),
+            'image_ios' => Yii::t('app','Hình ảnh QR IOS'),
+            'link_ios' => Yii::t('app','Link tải IOS'),
         ];
     }
 

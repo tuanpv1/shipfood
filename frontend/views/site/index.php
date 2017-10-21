@@ -187,7 +187,7 @@ use yii\helpers\Url;
                                     <img class="ship-img" src="<?= $vegetable->getImageLink() ?>"
                                          title="<?= $vegetable->title ?>" alt="<?= $vegetable->title ?>"/>
                                     <div class="portfolio_images_overlay text-center">
-                                        <a href="#" onclick="showModal(<?= Json::encode($vegetable) ?>)">
+                                        <a href="<?= Url::home() ?>#vegetable" onclick="showModalDetail(<?= $vegetable->id ?>)">
                                             <h6><?= $vegetable->title ?></h6>
                                             <p class="product_price"><?= News::formatNumber($vegetable->price) ?>
                                                 VND</p>
@@ -242,34 +242,7 @@ use yii\helpers\Url;
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="modal-title" id="myModalLabel">Đậu bắp</h5>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img style="height: 300px" src="images/vegetable1.jpg" alt=""/>
-                    </div>
-                    <div class="col-md-7">
-                        <b>Giá thành:</b> 35.000 VND.
-                        <br>
-                        Thương hiệu Đà Lạt G.A.P, Việt Nam.
-                        <br>
-                        Danh mục sản phẩm Rau sạch.
-                        <br>
-                        Đậu bắp còn có nhiều tên gọi khác như mướp tây, bông vàng, bắp chà hay okra (tiếng Anh). Đậu bắp
-                        Đà Lạt G.A.P được gieo trồng và thu hoạch theo chứng chỉ rau sạch quốc tế Global G.A.P.
-                        <br>
-                        Quy cách bán hàng: Vỉ khoảng 1 kilogram
-                        <br>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-            </div>
+
         </div>
     </div>
 </div>

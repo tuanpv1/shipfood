@@ -3,81 +3,95 @@
  */
 
 "use strict";
-
+var baseurl = window.location.origin;
 
 jQuery(document).ready(function ($) {
 
-	$(window).load(function () {
-		$(".loaded").fadeOut();
-		$(".preloader").delay(1000).fadeOut("slow");
-	});
+    $(window).load(function () {
+        $(".loaded").fadeOut();
+        $(".preloader").delay(1000).fadeOut("slow");
+    });
 
 
+    jQuery('.scrollup').click(function () {
+        $("html, body").animate({scrollTop: 0}, 2000);
+        return false;
+    });
+
+    jQuery('.nav a').bind('click', function () {
+        $('html , body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top - 80
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
 
 
-	jQuery('.scrollup').click(function () {
-		$("html, body").animate({scrollTop: 0}, 2000);
-		return false;
-	});
+    jQuery(window).scroll(function () {
+        var top = jQuery(document).scrollTop();
+        var height = 300;
+        //alert(batas);
 
-	jQuery('.nav a').bind('click', function () {
-		$('html , body').stop().animate({
-			scrollTop: $($(this).attr('href')).offset().top - 80
-		}, 1500, 'easeInOutExpo');
-		event.preventDefault();
-	});
-	
-	
-	jQuery(window).scroll(function () {
-	  var top = jQuery(document).scrollTop();
-		var height = 300;
-	  //alert(batas);
-	  
-	  if (top > height) {
-		jQuery('.navbar-fixed-top').addClass('menu-scroll');
-	  } else {
-	   jQuery('.navbar-fixed-top').removeClass('menu-scroll');
-	  }
-	});	
- // Scroll up 
+        if (top > height) {
+            jQuery('.navbar-fixed-top').addClass('menu-scroll');
+        } else {
+            jQuery('.navbar-fixed-top').removeClass('menu-scroll');
+        }
+    });
+    // Scroll up
 
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 600) {
             $('.scrollup').fadeIn('slow');
         } else {
             $('.scrollup').fadeOut('slow');
         }
     });
-    $('.scrollup').click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 1000);
+    $('.scrollup').click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
         return false;
-    }); 
- 
- new WOW().init();
+    });
+
+    new WOW().init();
 
 });
 
-function showFoodByCat(check,idShow,idHide) {
-	if(check){
-        $('.item_cat_'+idHide).fadeOut('slow');
-        $('.item_cat_'+idShow).fadeIn('slow');
-	}else{
-        $('.item_cat_'+idHide).fadeIn('slow');
-        $('.item_cat_'+idShow).fadeIn('slow');
-	}
+function showFoodByCat(check, idShow, idHide) {
+    if (check) {
+        $('.item_cat_' + idHide).fadeOut('slow');
+        $('.item_cat_' + idShow).fadeIn('slow');
+    } else {
+        $('.item_cat_' + idHide).fadeIn('slow');
+        $('.item_cat_' + idShow).fadeIn('slow');
+    }
 }
 
-function showVegetableByCat(check,idShow,idHide) {
-	if(check){
-        $('.item_cat_'+idHide).fadeOut('slow');
-        $('.item_cat_'+idShow).fadeIn('slow');
-	}else{
-        $('.item_cat_'+idHide).fadeIn('slow');
-        $('.item_cat_'+idShow).fadeIn('slow');
-	}
+function showVegetableByCat(check, idShow, idHide) {
+    if (check) {
+        $('.item_cat_' + idHide).fadeOut('slow');
+        $('.item_cat_' + idShow).fadeIn('slow');
+    } else {
+        $('.item_cat_' + idHide).fadeIn('slow');
+        $('.item_cat_' + idShow).fadeIn('slow');
+    }
 }
 
-function showModal(array) {
-	alert(array);
-
+function showModalDetail(idNew) {
+    var  url = baseurl + "/index.php?r=site/get-detail-modal";
+    if (idNew) {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                idNew: idNew
+            },
+            success: function (response) {
+                if (response.success) {
+                    $(".bs-example-modal-lg").find(".modal-content").html(response.data);
+                    $(".bs-example-modal-lg").modal('show');
+                } else {
+                    alert('Đang xử lý!');
+                }
+            }
+        });
+    }
 }

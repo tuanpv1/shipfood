@@ -81,6 +81,28 @@ class InfoPublicController extends Controller
                     $model->image_header = $file_name;
                 }
             }
+            $image_android = UploadedFile::getInstance($model, 'image_android');
+            if ($image_android) {
+                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_android->extension;
+                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
+                if (!file_exists($tmp)) {
+                    mkdir($tmp, 0777, true);
+                }
+                if ($image_android->saveAs($tmp . $file_name)) {
+                    $model->image_android = $file_name;
+                }
+            }
+            $image_ios = UploadedFile::getInstance($model, 'image_ios');
+            if ($image_ios) {
+                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_ios->extension;
+                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
+                if (!file_exists($tmp)) {
+                    mkdir($tmp, 0777, true);
+                }
+                if ($image_ios->saveAs($tmp . $file_name)) {
+                    $model->image_ios = $file_name;
+                }
+            }
             $model->status = InfoPublic::STATUS_ACTIVE;
             if ($model->save(false)) {
                 \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Thêm mới thông tin thành công'));
@@ -106,6 +128,8 @@ class InfoPublicController extends Controller
     {
         $model = $this->findModel($id);
         $old_image_header = $model->image_header;
+        $old_image_android = $model->image_android;
+        $old_image_ios = $model->image_ios;
         if ($model->load(Yii::$app->request->post())) {
             $image_header = UploadedFile::getInstance($model, 'image_header');
             if ($image_header) {
@@ -115,13 +139,47 @@ class InfoPublicController extends Controller
                     mkdir($tmp, 0777, true);
                 }
                 if ($image_header->saveAs($tmp . $file_name)) {
-                    if(file_exists($tmp.$old_image_header)){
-                        unlink($tmp.$old_image_header);
-                    }
+//                    if(file_exists($tmp.$old_image_header)){
+//                        unlink($tmp.$old_image_header);
+//                    }
                     $model->image_header = $file_name;
                 }
             }else{
                 $model->image_header = $old_image_header;
+            }
+
+            $image_android = UploadedFile::getInstance($model, 'image_android');
+            if ($image_android) {
+                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_android->extension;
+                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
+                if (!file_exists($tmp)) {
+                    mkdir($tmp, 0777, true);
+                }
+                if ($image_android->saveAs($tmp . $file_name)) {
+//                    if(file_exists($tmp.$old_image_android)){
+//                        unlink($tmp.$old_image_android);
+//                    }
+                    $model->image_android = $file_name;
+                }
+            }else{
+                $model->image_android = $old_image_android;
+            }
+
+            $image_ios = UploadedFile::getInstance($model, 'image_ios');
+            if ($image_ios) {
+                $file_name = Yii::$app->user->id . '.' . uniqid() . time() . '.' . $image_ios->extension;
+                $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_banner') . '/';
+                if (!file_exists($tmp)) {
+                    mkdir($tmp, 0777, true);
+                }
+                if ($image_ios->saveAs($tmp . $file_name)) {
+//                    if(file_exists($tmp.$old_image_ios)){
+//                        unlink($tmp.$old_image_ios);
+//                    }
+                    $model->image_ios = $file_name;
+                }
+            }else{
+                $model->image_ios = $old_image_ios;
             }
             if ($model->update(false)) {
                 \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Cập nhật thông tin thành công'));

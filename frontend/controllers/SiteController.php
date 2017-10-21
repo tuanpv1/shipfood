@@ -23,6 +23,7 @@ use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
+use yii\web\Response;
 use yii\web\UploadedFile;
 
 /**
@@ -378,5 +379,25 @@ class SiteController extends Controller
 //                return Json::encode(['success' => false, 'message' => 'Không đặt lịch hẹn thành công']);
             }
         }
+    }
+
+    public function actionGetDetailModal(){
+        $id = $_POST['idNew'];
+        $model = News::findOne($id);
+        if ($model) {
+            $data = $this->renderAjax('_body-modal', [
+                'model' => $model,
+            ]);
+            $success = true;
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['success' => $success, 'data' => $data];
+
+        } else {
+            $success = false;
+            $message = 'Không tồn tại nội dung';
+        }
+
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        return ['success' => $success, 'data' => $message];
     }
 }
