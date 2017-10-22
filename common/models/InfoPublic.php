@@ -18,6 +18,8 @@ use yii\helpers\Url;
  * @property string $email
  * @property string $phone
  * @property string $link_face
+ * @property string $link_android
+ * @property string $link_ios
  * @property string $youtube
  * @property string $twitter
  * @property string $address

@@ -18,14 +18,14 @@
             <img style="height: 300px" src="<?= $model->getImageLink() ?>" alt="<?= $model->title ?>"/>
         </div>
         <div class="col-md-7">
-            <b>Giá thành:</b> <?= \common\models\News::formatNumber($model->price) ?>VND.
+            <b>Giá thành:</b> <?= \common\models\News::formatNumber($model->price) ?> VND.
             <br>
             <?= $model->description ?>
             <br>
         </div>
     </div>
     <hr>
-    <div class="container">
+    <div style="width: 100%" class="container">
         <?= $model->content ?>
     </div>
 </div>

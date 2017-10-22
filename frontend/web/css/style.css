@@ -1018,9 +1018,8 @@ li:hover > ul {
 }
 
 .single_pakeg_text ul li {
-    background: url(../images/pkli.png) no-repeat left center;
-    padding: 15px 0px 15px 60px;
-    margin-top: 20px;
+    padding: 1px 5px 1px 5px;
+    margin-top: 1px;
 
 }
 

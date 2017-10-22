@@ -139,8 +139,8 @@ use yii\helpers\Url;
                                     foreach ($listDrink as $drink) {
                                         /** @var $drink News */
                                         ?>
-                                        <li><?= $drink->title ?>
-                                            ..............................................<?= News::formatNumber($drink->price) ?>
+                                        <li><img style="height: 100px;width: 100px" src="<?= $drink->getImageLink()?>" alt="">
+                                            <?= ucfirst($drink->title) ?><?= $drink->getPoint() ?><?= News::formatNumber($drink->price) ?>
                                             VND
                                         </li>
                                         <?php
@@ -218,14 +218,14 @@ use yii\helpers\Url;
                             <h4> Dễ dàng hơn bao giờ hết </h4>
                             <h1>Mobile App <span>hỗ trợ trên các hệ điều hành.</span></h1>
                             <div class="col-md-6 col-sm-12 text-center">
-                                <img style="width: 200px" src="images/android.png" alt=""/><br>
-                                <a href="">
+                                <img style="width: 200px" src="<?= InfoPublic::getImage($info->image_android) ?>" alt=""/><br>
+                                <a href="<?= $info->link_android ?>">
                                     <img src="images/google.png" alt=""/>
                                 </a>
                             </div>
                             <div class="col-md-6 col-sm-12 text-center">
-                                <img style="width: 200px" src="images/android.png" alt=""/><br>
-                                <a href="">
+                                <img style="width: 200px" src="<?= InfoPublic::getImage($info->image_ios) ?>" alt=""/><br>
+                                <a href="<?= $info->link_ios ?>">
                                     <img src="images/apps.png" alt=""/>
                                 </a>
                             </div>
