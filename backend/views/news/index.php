@@ -54,6 +54,7 @@ $visible_village = false;
                     [
                         'class' => '\kartik\grid\DataColumn',
                         'attribute' => 'price',
+                        'visible'=>$type!=News::TYPE_NEWS?true:false,
                         'format' => 'html',
                         'value' => function ($model, $key, $index, $widget) {
                             /** @var $model \common\models\News */

@@ -14,8 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 $i_want_to_see_it = false;
 $i_want = false;
 if ($model->type == News::TYPE_ABOUT ||
-    $model->type == News::TYPE_VEGETABLES_SX ||
-    $model->type == News::TYPE_VEGETABLES_LK ||
     $model->type == News::TYPE_NEWS) {
     $i_want_to_see_it = true;
 }
@@ -76,7 +74,7 @@ if($model->type == News::TYPE_FOOD_MORNING || $model->type == News::TYPE_FOOD_LU
                             ],
                             [
                                 'attribute' => 'price',
-                                'visible' => $i_want_to_see_it ? true : false,
+                                'visible' => $i_want_to_see_it ? false : true,
                                 'format' => 'raw',
                                 'value'=>$model->price?News::formatNumber($model->price).' VND':''
                             ],
