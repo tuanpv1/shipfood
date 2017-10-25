@@ -1052,7 +1052,6 @@ li:hover > ul {
     text-transform: uppercase;
     color: #d12129;
     line-height: 5rem;
-
 }
 
 .single_monail_apps_text h1 span {
@@ -1270,5 +1269,19 @@ li:hover > ul {
 
     .blog-post img{
         margin-bottom: 20px;
+    }
+
+    .single_monail_apps_text h1 span {
+        font-size: 1.500rem;
+    }
+
+    .single_monail_apps_text h1 {
+        font-size: 4rem;
+    }
+    .single_monail_apps_text img{
+        padding-top: 30px;
+    }
+    .single_monail_apps_text a {
+        margin-top: 0;
     }
 }
