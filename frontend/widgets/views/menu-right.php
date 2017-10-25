@@ -17,13 +17,13 @@ use yii\helpers\Url;
                 /** @var News $item */
                 ?>
                 <div class="row" style="padding-top: 20px">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-3">
                         <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
                             <img style="width: 80px" src="<?= $item->getImageLink() ?>"
                                  alt="<?= $item->title ?>" title="<?= $item->title ?>">
                         </a>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-xs-9">
                         <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>"><?= $item->title ?> - <?= News::formatNumber($item->price) ?> VND</a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ use yii\helpers\Url;
             foreach ($listDrink as $item) {
                 /** @var News $item */
                 ?>
-                    <div class="col-md-4" style="margin-bottom: 10px">
+                    <div class="col-md-4 col-sm-4 col-xs-4" style="margin-bottom: 10px">
                         <a href="#">
                             <img style="width: 80px;height: 80px"  src="<?= $item->getImageLink() ?>"
                                  alt="<?= $item->title ?>" title="<?= $item->title ?>">
