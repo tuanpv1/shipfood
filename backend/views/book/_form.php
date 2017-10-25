@@ -22,21 +22,13 @@ use kartik\widgets\ActiveForm;
 
     <?= $form->field($model, 'full_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'time_start')->widget(DateControl::classname(), [
-        'type' => DateControl::FORMAT_DATETIME,
-        'displayFormat' => 'd-M-y H:i',
-        'saveFormat' => 'php:U',
-        'displayTimezone' => 'Asia/Ho_Chi_Minh',
-    ]);
-    ?>
-
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'position')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'id_dv')->dropDownList(Book::listShift()); ?>
 
     <?= $form->field($model, 'status')->dropDownList(Book::listStatus()) ?>
-
-    <?= $form->field($model, 'old')->textInput() ?>
 
     <div class="form-group text-center">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Tạo mới') : Yii::t('app', 'Cập nhật'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
