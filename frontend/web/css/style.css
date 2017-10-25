@@ -874,12 +874,6 @@ li:hover > ul {
     display: inline-block;
 }
 
-.main_features_content {
-    background: url(../images/ft.png) right center no-repeat;
-    padding: 40px;
-    overflow: hidden;
-}
-
 .single_features_text {
     background: url(../images/textbg.jpg) center center no-repeat;
     padding: 30px;

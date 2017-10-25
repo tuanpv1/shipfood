@@ -34,8 +34,27 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
         ],
     ],
 ]);
-
+$check = Html::getInputId($model, 'honor');
 // Set kcfinder session options
+
+$js = <<<JS
+    $("#$check").change(function() {
+        if($('#$check').is(':checked')){
+            $('#id_is_honor').show('slow');
+        }else {
+            $('#id_is_honor').hide('slow');
+        }
+    });
+JS;
+$js_default = <<<JS
+     if($('#$check').is(':checked')){
+            $('#id_is_honor').show();
+        }else {
+            $('#id_is_honor').hide();
+        }
+JS;
+$this->registerJs($js_default, \yii\web\View::POS_READY);
+$this->registerJs($js, \yii\web\View::POS_READY);
 ?>
 
 <div class="form-body">
@@ -52,6 +71,13 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'status')->dropDownList(\common\models\News::listStatus()) ?>
+
+    <?php if($type == News::TYPE_FOOD_LUNCH || $type == News::TYPE_FOOD_MORNING){ ?>
+    <?= $form->field($model, 'honor')->checkbox() ?>
+        <div id="id_is_honor">
+            <?= $form->field($model, 'description')->textarea(['rows'=>8]) ?>
+        </div>
+    <?php } ?>
 
     <?= $form->field($model, 'images')->widget(\kartik\file\FileInput::classname(), [
         'pluginOptions' => [
@@ -75,7 +101,7 @@ $kcfOptions = array_merge(\common\widgets\CKEditor::$kcfDefaultOptions, [
 
     <?php
     if($type == News::TYPE_FOOD_MORNING || $type == News::TYPE_FOOD_LUNCH || $type == News::TYPE_ABOUT){
-        echo  "<p style='color: red'>Vui lòng upload hình ảnh đúng kích thước theo tỉ lệ 1:1 ví dụ 200px * 200px<p>";
+        echo  "<p style='color: red'>Vui lòng upload hình ảnh đúng kích thước theo tỉ lệ 1:1 ví dụ 200px * 200px đối với ảnh đồ ăn thương hiêu chất lượng tối thiểu phải là 7  00px*700px<p>";
     }
     if($type == News::TYPE_VEGETABLES_LK || $type == News::TYPE_VEGETABLES_SX){
         echo  "<p style='color: red'>Vui lòng upload hình ảnh đúng kích thước theo tỉ lệ 1,3:1 ví dụ 276px * 200px<p>";

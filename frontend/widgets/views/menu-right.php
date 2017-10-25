@@ -10,7 +10,7 @@ use yii\helpers\Url;
 
 ?>
 <div class="col-md-3">
-    <h5>Top đồ ăn ưa chuộng</h5>
+    <h5>Thực phẩm sạch</h5>
     <div class="list-food">
         <?php if ($listFood) {
             foreach ($listFood as $item) {
@@ -24,116 +24,31 @@ use yii\helpers\Url;
                         </a>
                     </div>
                     <div class="col-md-8">
-                        <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>"><?= $item->title ?></a>
+                        <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>"><?= $item->title ?> - <?= News::formatNumber($item->price) ?> VND</a>
                     </div>
                 </div>
                 <?php
             }
-        } else {
-            ?>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <?php
         } ?>
     </div>
     <br>
-    <h5>Top đồ uống ưa chuộng</h5>
+    <h5>Đồ ăn & Thức uống</h5>
     <div class="list-food">
+        <div class="row" style="padding-top: 20px">
         <?php if ($listDrink) {
             foreach ($listDrink as $item) {
                 /** @var News $item */
                 ?>
-                <div class="row" style="padding-top: 20px">
-                    <div class="col-md-4">
-                        <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>">
-                            <img style="width: 80px" src="<?= $item->getImageLink() ?>"
+                    <div class="col-md-4" style="margin-bottom: 10px">
+                        <a href="#">
+                            <img style="width: 80px;height: 80px"  src="<?= $item->getImageLink() ?>"
                                  alt="<?= $item->title ?>" title="<?= $item->title ?>">
                         </a>
                     </div>
-                    <div class="col-md-8">
-                        <a href="<?= Url::to(['site/detail-news', 'id' => $item->id]) ?>"><?= $item->title ?></a>
-                    </div>
-                </div>
                 <?php
             }
-        } else {
-            ?>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-4">
-                    <a href="#">
-                        <img style="width: 80px" src="images/p1.png"
-                             alt="#" title="#">
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <a href="#"><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6></a>
-                </div>
-            </div>
-            <?php
-        } ?>
+        }
+        ?>
+        </div>
     </div>
 </div>

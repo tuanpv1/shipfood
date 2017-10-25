@@ -33,15 +33,15 @@ class Header extends Widget
     {
         $listFood = News::find()
             ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['IN', 'type', [News::TYPE_FOOD_MORNING, News::TYPE_FOOD_LUNCH]])
+            ->andWhere(['IN', 'type', [News::TYPE_VEGETABLES_SX, News::TYPE_VEGETABLES_LK]])
             ->orderBy(['id' => SORT_DESC])
             ->limit(5)
             ->all();
         $listDrink = News::find()
             ->andWhere(['status' => News::STATUS_ACTIVE])
-            ->andWhere(['type' => News::TYPE_DRINK])
+            ->andWhere(['IN', 'type', [News::TYPE_FOOD_MORNING, News::TYPE_FOOD_LUNCH, News::TYPE_DRINK]])
             ->orderBy(['id' => SORT_DESC])
-            ->limit(5)
+            ->limit(12)
             ->all();
         $st = new Header();
         return $st->render('menu-right', [

@@ -113,6 +113,12 @@ class SiteController extends Controller
             ->orderBy(['updated_at' => SORT_DESC])
             ->all();
 
+        $foodTh = News::find()
+            ->andWhere(['IN', 'type', [News::TYPE_FOOD_LUNCH, News::TYPE_FOOD_MORNING]])
+            ->andWhere(['honor'=>1])
+            ->orderBy(['updated_at' => SORT_DESC])
+            ->one();
+
         $info = InfoPublic::findOne(InfoPublic::ID_DEFAULT);
 
         return $this->render('index', [
@@ -121,6 +127,7 @@ class SiteController extends Controller
             'listFood' => $listFood,
             'info' => $info,
             'listDrink' => $listDrink,
+            'foodTh' => $foodTh,
         ]);
     }
 

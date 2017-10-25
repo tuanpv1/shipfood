@@ -155,14 +155,14 @@ class News extends \yii\db\ActiveRecord
             'type' => Yii::t('app', 'Loại bài viết'),
             'tags' => Yii::t('app', 'Tags'),
             'short_description' => Yii::t('app', 'Mô tả ngắn'),
-            'description' => Yii::t('app', 'Mô tả'),
+            'description' => Yii::t('app', 'Mô tả đồ ăn thương hiệu'),
             'video_url' => Yii::t('app', 'Đường dẫn video'),
             'video' => Yii::t('app', 'Video'),
             'view_count' => Yii::t('app', 'View Count'),
             'like_count' => Yii::t('app', 'Like Count'),
             'comment_count' => Yii::t('app', 'Comment Count'),
             'favorite_count' => Yii::t('app', 'Favorite Count'),
-            'honor' => Yii::t('app', 'Thời gian sử dụng DV'),
+            'honor' => Yii::t('app', 'Đồ ăn thương hiệu'),
             'source_name' => Yii::t('app', 'Source Name'),
             'source_url' => Yii::t('app', 'Url'),
             'status' => Yii::t('app', 'Trạng thái'),
@@ -356,18 +356,26 @@ class News extends \yii\db\ActiveRecord
         // return $this->images ? Url::to('@web/' . Yii::getAlias('@cat_image') . DIRECTORY_SEPARATOR . $this->images, true) : '';
     }
 
-    public function getPoint(){
+    public function getImageLinkCss()
+    {
+        return $this->images ?Url::to( Yii::getAlias('@web/') . Yii::getAlias('@image_news/') . $this->images,true) : '';
+        // return $this->images ? Url::to('@web/' . Yii::getAlias('@cat_image') . DIRECTORY_SEPARATOR . $this->images, true) : '';
+    }
+
+    public function getPoint()
+    {
         $total = 50;
         $title = News::convert_vi_to_en(ucfirst($this->title));
         $a = strlen($title);
         $price = News::convert_vi_to_en(News::formatNumber($this->price));
         $b = strlen($price);
-        $c = $total - ($a+$b);
-        $string = str_repeat(".",$c);
+        $c = $total - ($a + $b);
+        $string = str_repeat(".", $c);
         return $string;
     }
 
-    public static function convert_vi_to_en($str) {
+    public static function convert_vi_to_en($str)
+    {
         $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", 'a', $str);
         $str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", 'e', $str);
         $str = preg_replace("/(ì|í|ị|ỉ|ĩ)/", 'i', $str);

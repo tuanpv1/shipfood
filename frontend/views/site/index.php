@@ -6,6 +6,7 @@ use yii\helpers\Url;
 
 /** @var $info InfoPublic */
 /** @var $gioithieu News */
+/** @var $foodTh News */
 
 ?>
 <section id="slider" class="slider">
@@ -47,26 +48,18 @@ use yii\helpers\Url;
         </div>
     </div>
 </section>
-
 <section id="features" class="features">
     <div class="slider_overlay">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s">
                     <div class="col-md-12">
                         <div class="main_features_content text-left">
                             <div class="col-md-6">
                                 <div class="single_features_text">
-                                    <h4>Món ăn thương hiệu</h4>
-                                    <h3>Bò xào kiểu nhật</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's stan</p>
-                                    <p>dard dummy text ever since the 1500s,when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book. It has survived not only
-                                        five centuries, but also the leap into electronic typesettingdard dummy text
-                                        ever since the 1500s,when an unknown printer took a galley of type and scrambled
-                                        it to make a type specimen book. It has survived not only five centuries, but
-                                        also the leap into electronic typesetting</p>
+                                    <h4>Đồ ăn thương hiệu</h4>
+                                    <h3><?= $foodTh?$foodTh->title:'' ?></h3>
+                                    <p><?= $foodTh?$foodTh->description:'' ?></p>
                                 </div>
                             </div>
                         </div>
@@ -76,6 +69,13 @@ use yii\helpers\Url;
         </div>
     </div>
 </section>
+<style>
+    .main_features_content {
+        background: url('<?= $foodTh->getImageLinkCss() ?>') right center no-repeat;
+        padding: 40px;
+        overflow: hidden;
+    }
+</style>
 
 <section id="food" class="portfolio">
     <div class="container">

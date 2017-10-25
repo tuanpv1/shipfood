@@ -12,11 +12,16 @@ $this->params['breadcrumbs'][] = ['label' => News::getTypeName($model->type), 'u
 $this->params['breadcrumbs'][] = $this->title;
 
 $i_want_to_see_it = false;
+$i_want = false;
 if ($model->type == News::TYPE_ABOUT ||
     $model->type == News::TYPE_VEGETABLES_SX ||
     $model->type == News::TYPE_VEGETABLES_LK ||
     $model->type == News::TYPE_NEWS) {
     $i_want_to_see_it = true;
+}
+
+if($model->type == News::TYPE_FOOD_MORNING || $model->type == News::TYPE_FOOD_LUNCH){
+    $i_want = true;
 }
 ?>
 <div class="row">
@@ -74,6 +79,18 @@ if ($model->type == News::TYPE_ABOUT ||
                                 'visible' => $i_want_to_see_it ? true : false,
                                 'format' => 'raw',
                                 'value'=>$model->price?News::formatNumber($model->price).' VND':''
+                            ],
+                            [
+                                'attribute' => 'honor',
+                                'visible' => $i_want ? true : false,
+                                'format' => 'raw',
+                                'value'=>$model->honor?"Đang là đồ ăn thương hiệu":""
+                            ],
+                            [
+                                'attribute' => 'description',
+                                'visible' => $i_want ? true : false,
+                                'format' => 'raw',
+                                'value'=>$model->description?$model->description:""
                             ],
                             [
                                 'attribute' => 'created_at',
