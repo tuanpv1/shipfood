@@ -40,13 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'value'=>$model->image_header ? Html::img(Yii::getAlias('@web') . "/" . Yii::getAlias('@image_banner') . "/" . $model->image_header, ['width' => '100px']) : '',
                             ],
                             [
-                                'attribute'=>'image_header',
+                                'attribute'=>'image_android',
                                 'format' => 'raw',
                                 'value'=>$model->image_android ? Html::img(Yii::getAlias('@web') . "/" . Yii::getAlias('@image_banner') . "/" . $model->image_android, ['width' => '100px']) : '',
                             ],
                             'link_android',
                             [
-                                'attribute'=>'image_header',
+                                'attribute'=>'image_ios',
                                 'format' => 'raw',
                                 'value'=>$model->image_ios ? Html::img(Yii::getAlias('@web') . "/" . Yii::getAlias('@image_banner') . "/" . $model->image_ios, ['width' => '100px']) : '',
                             ],
