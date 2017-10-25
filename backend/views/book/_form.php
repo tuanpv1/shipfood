@@ -32,10 +32,7 @@ use kartik\widgets\ActiveForm;
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_dv')->widget(
-        Select2::classname(),
-        [ 'data'=>ArrayHelper::map(News::find()->andWhere(['status' => News::STATUS_ACTIVE, 'type' => News::TYPE_DV])->all(),'id','title') ]
-    ); ?>
+    <?= $form->field($model, 'id_dv')->dropDownList(Book::listShift()); ?>
 
     <?= $form->field($model, 'status')->dropDownList(Book::listStatus()) ?>
 
