@@ -160,7 +160,7 @@ class NewsController extends Controller
                 $tmp = Yii::getAlias('@backend') . '/web/' . Yii::getAlias('@image_news') . '/';
                 if ($image_display->saveAs($tmp . $file_name)) {
                     if(file_exists($tmp . $old_images)){
-                        unlink($tmp . $old_images);
+//                        unlink($tmp . $old_images);
                     }
                     $model->images = $file_name;
                 }
