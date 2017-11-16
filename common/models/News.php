@@ -358,11 +358,11 @@ class News extends \yii\db\ActiveRecord
 
     public function getImageLinkCss()
     {
-         if($this->images){
-             return Url::to( Yii::getAlias('@web/') . Yii::getAlias('@image_news/') . $this->images,true);
-         }else{
-             return Url::to( Yii::getAlias('@web/images/ft.png'),true);
-         }
+        if ($this->images) {
+            return Url::to(Yii::getAlias('@web/') . Yii::getAlias('@image_news/') . $this->images, true);
+        } else {
+            return Url::to(Yii::getAlias('@web') . Yii::getAlias('@image_news/') . 'ft.png', true);
+        }
     }
 
     public function getPoint()

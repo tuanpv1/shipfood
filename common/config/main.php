@@ -21,5 +21,6 @@ return [
         '@image_file' => 'upload/file',
         '@image_banner' => 'upload/image_banner',
         '@image_news' => 'upload/image_news',
+        '@images' => 'images',
     ],
 ];
