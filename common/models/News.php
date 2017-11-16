@@ -362,7 +362,7 @@ class News extends \yii\db\ActiveRecord
          if($this->images){
              Url::to( Yii::getAlias('@web/') . Yii::getAlias('@image_news/') . $this->images,true);
          }else{
-             Url::to( Yii::getAlias('@web/images/ft.png'),true);
+             Url::to( Yii::getAlias('@web/').'images/ft.png',true);
          }
         // return $this->images ? Url::to('@web/' . Yii::getAlias('@cat_image') . DIRECTORY_SEPARATOR . $this->images, true) : '';
         return $link;
