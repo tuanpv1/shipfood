@@ -69,13 +69,18 @@ use yii\helpers\Url;
         </div>
     </div>
 </section>
-<style>
-    .main_features_content {
-        background: url('<?= $foodTh->getImageLinkCss() ?>') right center no-repeat;
-        padding: 40px;
-        overflow: hidden;
-    }
-</style>
+<?php if($foodTh){
+    ?>
+    <style>
+        .main_features_content {
+            background: url('<?= $foodTh->getImageLinkCss() ?>') right center no-repeat;
+            padding: 40px;
+            overflow: hidden;
+        }
+    </style>
+    <?php
+} ?>
+
 
 <section id="food" class="portfolio">
     <div class="container">
