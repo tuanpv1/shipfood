@@ -48,7 +48,7 @@ use yii\helpers\Url;
         </div>
     </div>
 </section>
-<?php if($foodTh->title){ ?>
+<?php if($foodTh && $foodTh->title){ ?>
     <section id="features" class="features">
         <div class="slider_overlay">
             <div class="container">
