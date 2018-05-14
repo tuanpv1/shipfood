@@ -48,18 +48,20 @@ use yii\helpers\Url;
         </div>
     </div>
 </section>
-<section id="features" class="features">
-    <div class="slider_overlay">
-        <div class="container">
-            <div class="row text-center">
-                <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s">
-                    <div class="col-md-12">
-                        <div class="main_features_content text-left">
-                            <div class="col-md-6">
-                                <div class="single_features_text">
-                                    <h4>Đồ ăn thương hiệu</h4>
-                                    <h3><?= $foodTh?$foodTh->title:'' ?></h3>
-                                    <p><?= $foodTh?$foodTh->description:'' ?></p>
+<?php if($foodTh->title){ ?>
+    <section id="features" class="features">
+        <div class="slider_overlay">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s">
+                        <div class="col-md-12">
+                            <div class="main_features_content text-left">
+                                <div class="col-md-6">
+                                    <div class="single_features_text">
+                                        <h4>Đồ ăn thương hiệu</h4>
+                                        <h3><?= $foodTh?$foodTh->title:'' ?></h3>
+                                        <p><?= $foodTh?$foodTh->description:'' ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -67,20 +69,19 @@ use yii\helpers\Url;
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<?php if($foodTh){
-    ?>
-    <style>
-        .main_features_content {
-            background: url('<?= $foodTh->getImageLinkCss() ?>') right center no-repeat;
-            padding: 40px;
-            overflow: hidden;
-        }
-    </style>
-    <?php
-} ?>
-
+    </section>
+    <?php if($foodTh){
+        ?>
+        <style>
+            .main_features_content {
+                background: url('<?= $foodTh->getImageLinkCss() ?>') right center no-repeat;
+                padding: 40px;
+                overflow: hidden;
+            }
+        </style>
+        <?php
+    } ?>
+<?php } ?>
 
 <section id="food" class="portfolio">
     <div class="container">
