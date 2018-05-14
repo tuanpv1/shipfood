@@ -14,6 +14,7 @@ use Yii;
 use common\models\News;
 use common\models\NewsSearch;
 use yii\data\ArrayDataProvider;
+use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -40,6 +41,15 @@ class NewsController extends Controller
             'auth' => [
                 'class' => Yii2Auth::className(),
                 'autoAllow' => false,
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
             ],
         ];
     }

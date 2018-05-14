@@ -9,6 +9,7 @@ use common\models\AuthItemChild;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
+use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
@@ -23,6 +24,15 @@ class RbacBackendController extends \yii\web\Controller
                 'autoAllow' => false,
 //                'authManager' => 'authManager',
 //                'except' => ['index'],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
             ],
         ];
     }
