@@ -108,7 +108,7 @@ use yii\helpers\Url;
                                 /** @var $food News */
                                 ?>
                                 <div class="col-md-3 col-sm-4 col-xs-6 single_portfolio_text item_cat_<?= $food->type ?>">
-                                    <img src="<?= $food->getImageLink() ?>" alt=""/>
+                                    <img class="ship-img-food" src="<?= $food->getImageLink() ?>" alt=""/>
                                     <div class="portfolio_images_overlay text-center">
                                         <h6><?= $food->title ?></h6>
                                         <p class="product_price"><?= News::formatNumber($food->price) ?> VND</p>

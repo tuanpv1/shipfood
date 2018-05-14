@@ -1205,6 +1205,13 @@ li:hover > ul {
     height: 200px;
 }
 
+.main_portfolio_content .ship-img-food {
+
+    height: 250px;
+    width: 290px;
+
+}
+
 @media (max-width: 760px) {
     .main_features_content {
         padding: 0;
